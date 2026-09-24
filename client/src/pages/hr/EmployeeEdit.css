@@ -1,0 +1,553 @@
+/* =========================================================
+   HR EMPLOYEE EDIT PAGE
+========================================================= */
+
+.employee-edit-page {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 28px 32px 40px;
+
+    background: #f7f8fa;
+    color: #111827;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.employee-edit-header {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 18px;
+
+    margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.employee-edit-header .back-button {
+    flex-shrink: 0;
+
+    height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0 14px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.employee-edit-header .back-button:hover {
+    background: #f3f6fb;
+
+    color: #2563eb;
+
+    border-color: #dbe5ff;
+}
+
+
+/* =========================================================
+   HEADER CONTENT
+========================================================= */
+
+.employee-edit-header h1 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 24px;
+    line-height: 30px;
+
+    font-weight: 700;
+}
+
+
+.employee-edit-header p {
+    margin: 5px 0 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.employee-edit-form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.employee-form-section {
+    width: 100%;
+
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 2px 8px rgba(15, 23, 42, 0.035);
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.employee-form-section h2 {
+    margin: 0 0 20px;
+
+    padding-bottom: 14px;
+
+    border-bottom: 1px solid #f0f1f3;
+
+    color: #111827;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.employee-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px 20px;
+}
+
+
+/* =========================================================
+   FORM LABEL
+========================================================= */
+
+.employee-form-section label {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    box-sizing: border-box;
+}
+
+
+.employee-form-section label > span {
+    color: #374151;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.employee-form-section input,
+.employee-form-section select,
+.employee-form-section textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #dfe3e8;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.employee-form-section input,
+.employee-form-section select {
+    height: 43px;
+
+    padding: 0 12px;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.employee-form-section textarea {
+    min-height: 105px;
+
+    padding: 12px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.employee-form-section input::placeholder,
+.employee-form-section textarea::placeholder {
+    color: #9ca3af;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.employee-form-section input:focus,
+.employee-form-section select:focus,
+.employee-form-section textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.employee-form-section input:hover,
+.employee-form-section select:hover,
+.employee-form-section textarea:hover {
+    border-color: #cbd5e1;
+}
+
+
+/* =========================================================
+   DISABLED
+========================================================= */
+
+.employee-form-section input:disabled,
+.employee-form-section select:disabled,
+.employee-form-section textarea:disabled {
+    background: #f8fafc;
+
+    color: #94a3b8;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   DATE INPUT
+========================================================= */
+
+.employee-form-section input[type="date"] {
+    color-scheme: light;
+}
+
+
+/* =========================================================
+   ADDRESS SECTION
+========================================================= */
+
+.employee-form-section > label {
+    width: 100%;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.employee-form-actions {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding: 18px 0 0;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+========================================================= */
+
+.employee-form-actions > button:first-child {
+    height: 42px;
+
+    padding: 0 18px;
+
+    border: 1px solid #dfe3e8;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.employee-form-actions > button:first-child:hover {
+    background: #f8fafc;
+
+    border-color: #cbd5e1;
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
+
+.employee-form-actions .save-button {
+    min-width: 135px;
+
+    height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.employee-form-actions .save-button:hover {
+    background: #1d4ed8;
+}
+
+
+.employee-form-actions .save-button:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================================================
+   DISABLED ACTIONS
+========================================================= */
+
+.employee-form-actions button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+}
+
+
+.employee-form-actions .save-button:disabled:hover {
+    background: #2563eb;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.employee-edit-loading {
+    width: 100%;
+    min-height: 60vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    background: #f7f8fa;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+.employee-edit-loading svg {
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   SPINNER
+========================================================= */
+
+.spin {
+    animation: employeeEditSpin 1s linear infinite;
+}
+
+
+@keyframes employeeEditSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .employee-edit-page {
+        padding: 22px;
+    }
+
+    .employee-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .employee-edit-page {
+        padding: 16px;
+    }
+
+    .employee-edit-header {
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .employee-edit-header .back-button {
+        height: 38px;
+
+        padding: 0 11px;
+
+        font-size: 12px;
+    }
+
+    .employee-edit-header h1 {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .employee-edit-header p {
+        font-size: 12px;
+    }
+
+    .employee-form-section {
+        padding: 18px;
+    }
+
+    .employee-form-grid {
+        gap: 15px;
+    }
+
+    .employee-form-actions {
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+    .employee-form-actions button {
+        width: 100%;
+    }
+
+    .employee-form-actions .save-button {
+        width: 100%;
+    }
+
+}

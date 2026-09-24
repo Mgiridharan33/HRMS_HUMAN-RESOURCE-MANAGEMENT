@@ -1,0 +1,1534 @@
+/* =========================================================
+   ADMIN JOB EDIT PAGE
+   Light HRMS Admin Theme
+========================================================= */
+
+.admin-job-edit-page {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 28px 32px 50px;
+
+    background: #f6f8fb;
+    color: #172033;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.admin-job-edit-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    margin-bottom: 24px;
+}
+
+
+.admin-job-edit-header-left {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    min-width: 0;
+}
+
+
+.admin-job-back-button {
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dfe5ed;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #344054;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.admin-job-back-button:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #2563eb;
+
+    transform: translateX(-2px);
+}
+
+
+.admin-job-breadcrumb {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 5px;
+
+    color: #8a94a6;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.admin-job-breadcrumb span {
+    color: #c2c9d3;
+}
+
+
+.admin-job-edit-header h1 {
+    margin: 0;
+
+    color: #172033;
+
+    font-size: 28px;
+    line-height: 1.25;
+    font-weight: 750;
+
+    letter-spacing: -0.4px;
+}
+
+
+.admin-job-edit-header p {
+    margin: 5px 0 0;
+
+    color: #7a8495;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.admin-job-header-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+.admin-job-secondary-button,
+.admin-job-primary-button {
+    min-height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0 17px;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+
+.admin-job-secondary-button {
+    border: 1px solid #d9e0e9;
+
+    background: #ffffff;
+    color: #344054;
+}
+
+
+.admin-job-secondary-button:hover {
+    background: #f8fafc;
+    border-color: #c7d0dc;
+}
+
+
+.admin-job-primary-button {
+    border: 1px solid #2563eb;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    box-shadow:
+        0 2px 5px rgba(37, 99, 235, 0.18);
+}
+
+
+.admin-job-primary-button:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+
+    box-shadow:
+        0 5px 12px rgba(37, 99, 235, 0.22);
+
+    transform: translateY(-1px);
+}
+
+
+.admin-job-primary-button:disabled,
+.admin-job-secondary-button:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   ALERTS
+========================================================= */
+
+.admin-job-alert {
+    width: 100%;
+
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 11px 14px;
+
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+
+.admin-job-alert > span {
+    flex: 1;
+}
+
+
+.admin-job-alert > button {
+    width: 30px;
+    height: 30px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 30px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 7px;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+.admin-job-alert-error {
+    border: 1px solid #fecaca;
+
+    background: #fff5f5;
+    color: #b42318;
+}
+
+
+.admin-job-alert-error > button {
+    color: #b42318;
+}
+
+
+.admin-job-alert-error > button:hover {
+    background: #fee2e2;
+}
+
+
+.admin-job-alert-success {
+    border: 1px solid #bbf7d0;
+
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+
+.admin-job-alert-success > button {
+    color: #15803d;
+}
+
+
+.admin-job-alert-success > button:hover {
+    background: #dcfce7;
+}
+
+
+/* =========================================================
+   MAIN FORM
+========================================================= */
+
+.admin-job-edit-form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.admin-job-section {
+    width: 100%;
+
+    padding: 24px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 13px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 1px 2px rgba(15, 23, 42, 0.03);
+
+    box-sizing: border-box;
+}
+
+
+.admin-job-section-header {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 13px;
+
+    margin-bottom: 23px;
+}
+
+
+.admin-job-section-icon {
+    width: 40px;
+    height: 40px;
+
+    flex: 0 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dbeafe;
+    border-radius: 10px;
+
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+
+.admin-job-section-header h2 {
+    margin: 0;
+
+    color: #1d2939;
+
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 700;
+}
+
+
+.admin-job-section-header p {
+    margin: 4px 0 0;
+
+    color: #8a94a6;
+
+    font-size: 12.5px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.admin-job-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+.admin-job-field {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.admin-job-field-full {
+    grid-column: 1 / -1;
+}
+
+
+.admin-job-field label {
+    display: flex;
+    align-items: center;
+
+    gap: 3px;
+
+    color: #344054;
+
+    font-size: 12.5px;
+    line-height: 1.4;
+    font-weight: 650;
+}
+
+
+.admin-job-field label span {
+    color: #ef4444;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INPUTS / TEXTAREA
+========================================================= */
+
+.admin-job-field input,
+.admin-job-field textarea,
+.admin-job-field select {
+    width: 100%;
+
+    border: 1px solid #d8dee8;
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: #172033;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+
+.admin-job-field input,
+.admin-job-field select {
+    height: 44px;
+
+    padding: 0 13px;
+}
+
+
+.admin-job-field textarea {
+    min-height: 180px;
+
+    padding: 13px 14px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+.admin-job-field input::placeholder,
+.admin-job-field textarea::placeholder {
+    color: #a5adba;
+}
+
+
+.admin-job-field input:hover,
+.admin-job-field textarea:hover,
+.admin-job-field select:hover {
+    border-color: #b9c3d0;
+}
+
+
+.admin-job-field input:focus,
+.admin-job-field textarea:focus,
+.admin-job-field select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   INPUT WITH ICON
+========================================================= */
+
+.admin-job-input-icon {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.admin-job-input-icon > svg {
+    position: absolute;
+
+    left: 13px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #98a2b3;
+
+    pointer-events: none;
+}
+
+
+.admin-job-input-icon input {
+    padding-left: 39px;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.admin-job-select-wrapper {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.admin-job-select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+
+    padding-right: 40px;
+
+    cursor: pointer;
+}
+
+
+.admin-job-select-wrapper > svg {
+    position: absolute;
+
+    top: 50%;
+    right: 13px;
+
+    transform: translateY(-50%);
+
+    color: #8b95a5;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DYNAMIC LIST
+========================================================= */
+
+.admin-job-dynamic-list {
+    width: 100%;
+}
+
+
+.admin-job-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 13px;
+}
+
+
+.admin-job-list-header h3 {
+    margin: 0;
+
+    color: #344054;
+
+    font-size: 13px;
+    font-weight: 650;
+}
+
+
+.admin-job-add-button {
+    min-height: 34px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 12px;
+
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-family: inherit;
+
+    font-size: 12px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.admin-job-add-button:hover {
+    background: #dbeafe;
+    border-color: #93c5fd;
+}
+
+
+.admin-job-list-items {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+.admin-job-list-item {
+    display: grid;
+
+    grid-template-columns:
+        34px minmax(0, 1fr) 38px;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.admin-job-list-number {
+    width: 34px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #e1e7ef;
+    border-radius: 8px;
+
+    background: #f8fafc;
+    color: #667085;
+
+    font-size: 12px;
+    font-weight: 650;
+}
+
+
+.admin-job-list-item input {
+    width: 100%;
+    height: 42px;
+
+    padding: 0 12px;
+
+    border: 1px solid #d8dee8;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #172033;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+
+.admin-job-list-item input::placeholder {
+    color: #a5adba;
+}
+
+
+.admin-job-list-item input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.09);
+}
+
+
+.admin-job-remove-item {
+    width: 38px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #98a2b3;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.admin-job-remove-item:hover {
+    border-color: #fecaca;
+
+    background: #fff1f2;
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   EMPTY LIST
+========================================================= */
+
+.admin-job-empty-list {
+    min-height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 20px;
+
+    border: 1px dashed #d5dce6;
+    border-radius: 10px;
+
+    background: #fafbfd;
+
+    text-align: center;
+}
+
+
+.admin-job-empty-list p {
+    margin: 0;
+
+    color: #8a94a6;
+
+    font-size: 12.5px;
+}
+
+
+.admin-job-empty-list button {
+    min-height: 34px;
+
+    padding: 0 12px;
+
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-family: inherit;
+
+    font-size: 12px;
+    font-weight: 650;
+
+    cursor: pointer;
+}
+
+
+.admin-job-empty-list button:hover {
+    background: #dbeafe;
+}
+
+
+/* =========================================================
+   TOGGLE FIELD
+========================================================= */
+
+.admin-job-toggle-field {
+    justify-content: center;
+
+    padding: 15px;
+
+    border: 1px solid #e5eaf1;
+    border-radius: 10px;
+
+    background: #fafbfd;
+}
+
+
+.admin-job-toggle-field > label:first-child {
+    margin-bottom: 1px;
+}
+
+
+.admin-job-toggle-field small {
+    color: #8a94a6;
+
+    font-size: 11.5px;
+}
+
+
+/* =========================================================
+   SWITCH
+========================================================= */
+
+.admin-job-switch {
+    position: relative;
+
+    width: 46px;
+    height: 25px;
+
+    display: inline-block;
+
+    margin-top: 3px;
+
+    cursor: pointer;
+}
+
+
+.admin-job-switch input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+}
+
+
+.admin-job-switch-slider {
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 999px;
+
+    background: #d0d5dd;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.admin-job-switch-slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 19px;
+    height: 19px;
+
+    left: 3px;
+    top: 3px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.admin-job-switch input:checked + .admin-job-switch-slider {
+    background: #2563eb;
+}
+
+
+.admin-job-switch input:checked + .admin-job-switch-slider::before {
+    transform: translateX(21px);
+}
+
+
+/* =========================================================
+   META SECTION
+========================================================= */
+
+.admin-job-meta-section {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+
+    padding: 18px 20px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+}
+
+
+.admin-job-meta-item {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    min-width: 0;
+}
+
+
+.admin-job-meta-item > svg {
+    width: 34px;
+    height: 34px;
+
+    padding: 8px;
+
+    flex: 0 0 34px;
+
+    border-radius: 8px;
+
+    background: #f1f5f9;
+    color: #64748b;
+
+    box-sizing: border-box;
+}
+
+
+.admin-job-meta-item > div {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.admin-job-meta-item span {
+    color: #98a2b3;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+.admin-job-meta-item strong {
+    overflow: hidden;
+
+    color: #475467;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   DANGER ZONE
+========================================================= */
+
+.admin-job-danger-zone {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 20px 22px;
+
+    border: 1px solid #fecaca;
+    border-radius: 12px;
+
+    background: #fffafa;
+
+    box-sizing: border-box;
+}
+
+
+.admin-job-danger-zone h2 {
+    margin: 0 0 5px;
+
+    color: #991b1b;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.admin-job-danger-zone p {
+    margin: 0;
+
+    max-width: 650px;
+
+    color: #9f6a6a;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+.admin-job-danger-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    flex-shrink: 0;
+}
+
+
+.admin-job-close-button,
+.admin-job-delete-button {
+    min-height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 0 13px;
+
+    border-radius: 8px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.admin-job-close-button {
+    border: 1px solid #f5c2c2;
+
+    background: #ffffff;
+    color: #b42318;
+}
+
+
+.admin-job-close-button:hover {
+    border-color: #ef9a9a;
+
+    background: #fff1f2;
+}
+
+
+.admin-job-delete-button {
+    border: 1px solid #dc2626;
+
+    background: #dc2626;
+    color: #ffffff;
+}
+
+
+.admin-job-delete-button:hover {
+    border-color: #b91c1c;
+
+    background: #b91c1c;
+}
+
+
+.admin-job-close-button:disabled,
+.admin-job-delete-button:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   BOTTOM ACTIONS
+========================================================= */
+
+.admin-job-bottom-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding-top: 4px;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.admin-job-edit-loading {
+    min-height: 65vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 13px;
+
+    color: #64748b;
+}
+
+
+.admin-job-edit-loading svg {
+    color: #2563eb;
+}
+
+
+.admin-job-edit-loading p {
+    margin: 0;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SPINNER
+========================================================= */
+
+.spin {
+    animation: adminJobSpin 0.85s linear infinite;
+}
+
+
+@keyframes adminJobSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   DATE INPUT
+========================================================= */
+
+.admin-job-field input[type="date"] {
+    color-scheme: light;
+}
+
+
+.admin-job-field input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+
+    opacity: 0.65;
+}
+
+
+.admin-job-field input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+
+.admin-job-field input[type="number"]::-webkit-inner-spin-button,
+.admin-job-field input[type="number"]::-webkit-outer-spin-button {
+    margin: 0;
+
+    -webkit-appearance: none;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.admin-job-edit-page::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+.admin-job-edit-page::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+
+.admin-job-edit-page::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background: #cbd5e1;
+}
+
+
+.admin-job-edit-page::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .admin-job-edit-page {
+        padding: 24px 22px 40px;
+    }
+
+
+    .admin-job-edit-header {
+        align-items: flex-start;
+    }
+
+
+    .admin-job-danger-zone {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    .admin-job-danger-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .admin-job-edit-page {
+        padding: 20px 16px 35px;
+    }
+
+
+    .admin-job-edit-header {
+        flex-direction: column;
+    }
+
+
+    .admin-job-edit-header-left {
+        width: 100%;
+    }
+
+
+    .admin-job-header-actions {
+        width: 100%;
+    }
+
+
+    .admin-job-header-actions button {
+        flex: 1;
+    }
+
+
+    .admin-job-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .admin-job-field-full {
+        grid-column: auto;
+    }
+
+
+    .admin-job-meta-section {
+        grid-template-columns: 1fr;
+    }
+
+
+    .admin-job-section {
+        padding: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .admin-job-edit-page {
+        padding: 16px 12px 30px;
+    }
+
+
+    .admin-job-edit-header {
+        margin-bottom: 18px;
+    }
+
+
+    .admin-job-edit-header-left {
+        align-items: flex-start;
+
+        gap: 11px;
+    }
+
+
+    .admin-job-back-button {
+        width: 38px;
+        height: 38px;
+
+        flex-basis: 38px;
+    }
+
+
+    .admin-job-edit-header h1 {
+        font-size: 22px;
+    }
+
+
+    .admin-job-edit-header p {
+        font-size: 12px;
+    }
+
+
+    .admin-job-breadcrumb {
+        font-size: 11px;
+    }
+
+
+    .admin-job-header-actions {
+        display: grid;
+
+        grid-template-columns: 1fr 1.4fr;
+
+        width: 100%;
+    }
+
+
+    .admin-job-section {
+        padding: 16px;
+
+        border-radius: 11px;
+    }
+
+
+    .admin-job-section-header {
+        gap: 10px;
+
+        margin-bottom: 19px;
+    }
+
+
+    .admin-job-section-icon {
+        width: 36px;
+        height: 36px;
+
+        flex-basis: 36px;
+    }
+
+
+    .admin-job-section-header h2 {
+        font-size: 15px;
+    }
+
+
+    .admin-job-section-header p {
+        font-size: 11.5px;
+    }
+
+
+    .admin-job-field input,
+    .admin-job-field select {
+        height: 42px;
+    }
+
+
+    .admin-job-field textarea {
+        min-height: 160px;
+    }
+
+
+    .admin-job-list-item {
+        grid-template-columns:
+            30px minmax(0, 1fr) 36px;
+
+        gap: 7px;
+    }
+
+
+    .admin-job-list-number {
+        width: 30px;
+        height: 40px;
+    }
+
+
+    .admin-job-list-item input {
+        height: 40px;
+
+        padding: 0 10px;
+
+        font-size: 12px;
+    }
+
+
+    .admin-job-remove-item {
+        width: 36px;
+        height: 40px;
+    }
+
+
+    .admin-job-danger-zone {
+        padding: 16px;
+
+        gap: 16px;
+    }
+
+
+    .admin-job-danger-actions {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        width: 100%;
+    }
+
+
+    .admin-job-close-button,
+    .admin-job-delete-button {
+        width: 100%;
+    }
+
+
+    .admin-job-bottom-actions {
+        display: grid;
+
+        grid-template-columns: 1fr 1.4fr;
+    }
+
+
+    .admin-job-bottom-actions button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .admin-job-edit-page {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+
+    .admin-job-header-actions {
+        grid-template-columns: 1fr;
+    }
+
+
+    .admin-job-bottom-actions {
+        grid-template-columns: 1fr;
+    }
+
+
+    .admin-job-danger-actions {
+        grid-template-columns: 1fr;
+    }
+
+
+    .admin-job-section {
+        padding: 14px;
+    }
+
+
+    .admin-job-list-item {
+        grid-template-columns:
+            28px minmax(0, 1fr) 34px;
+    }
+
+
+    .admin-job-list-number {
+        width: 28px;
+    }
+
+
+    .admin-job-remove-item {
+        width: 34px;
+    }
+
+}

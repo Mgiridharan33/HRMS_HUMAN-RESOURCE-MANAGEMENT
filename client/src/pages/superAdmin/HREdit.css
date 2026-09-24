@@ -1,0 +1,302 @@
+.hr-edit-page {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding-bottom: 40px;
+}
+
+
+.hr-edit-back {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 18px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.hr-edit-back:hover {
+    color: #2563eb;
+}
+
+
+.hr-edit-header {
+    margin-bottom: 20px;
+}
+
+
+.hr-edit-header h1 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 24px;
+}
+
+
+.hr-edit-header p {
+    margin-top: 6px;
+
+    color: #9ca3af;
+
+    font-size: 12px;
+}
+
+
+.hr-edit-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.hr-edit-card {
+    overflow: hidden;
+
+    background: #fff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+}
+
+
+.hr-edit-card-header {
+    padding: 18px 20px;
+
+    border-bottom: 1px solid #f0f1f3;
+}
+
+
+.hr-edit-card-header h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 14px;
+}
+
+
+.hr-edit-card-header p {
+    margin-top: 4px;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+}
+
+
+.hr-edit-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+
+    padding: 20px;
+}
+
+
+.hr-edit-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.hr-edit-field label {
+    color: #374151;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.hr-edit-field input,
+.hr-edit-field select {
+    width: 100%;
+
+    padding: 10px 11px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #fff;
+
+    color: #111827;
+
+    font-size: 12px;
+
+    font-family: inherit;
+}
+
+
+.hr-edit-field input:focus,
+.hr-edit-field select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.08);
+}
+
+
+/* =====================================================
+   ACCOUNT INFO
+===================================================== */
+
+.hr-edit-account-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 0;
+}
+
+
+.hr-edit-account-info > div {
+    min-height: 75px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 15px 20px;
+
+    border-bottom: 1px solid #f3f4f6;
+}
+
+
+.hr-edit-account-info span {
+    color: #9ca3af;
+
+    font-size: 10px;
+}
+
+
+.hr-edit-account-info strong {
+    color: #374151;
+
+    font-size: 12px;
+
+    word-break: break-all;
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.hr-edit-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+}
+
+
+.hr-edit-actions button {
+    height: 40px;
+
+    padding: 0 18px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    background: #fff;
+
+    color: #374151;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.hr-edit-actions button.save {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    border-color: #2563eb;
+
+    background: #2563eb;
+
+    color: #fff;
+}
+
+
+.hr-edit-actions button.save:hover {
+    background: #1d4ed8;
+}
+
+
+.hr-edit-actions button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+.hr-edit-loading {
+    min-height: 400px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+@media (max-width: 700px) {
+
+    .hr-edit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hr-edit-account-info {
+        grid-template-columns: 1fr;
+    }
+
+    .hr-edit-actions {
+        flex-direction: column-reverse;
+    }
+
+    .hr-edit-actions button {
+        width: 100%;
+    }
+
+}

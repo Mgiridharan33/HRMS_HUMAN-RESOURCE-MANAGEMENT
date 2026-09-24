@@ -1,0 +1,1866 @@
+/* =========================================================
+   HR PERSONAL LEAVE MANAGEMENT
+   SUPER ADMIN PANEL
+========================================================= */
+
+.hr-personal-leave-admin-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+
+    background: #f5f7fb;
+    color: #172033;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.hr-personal-leave-admin-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+
+    margin-bottom: 28px;
+}
+
+.hr-personal-leave-admin-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 8px;
+
+    color: #64748b;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.hr-personal-leave-admin-header h1 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+}
+
+.hr-personal-leave-admin-header p {
+    margin: 8px 0 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+========================================================= */
+
+.hr-personal-leave-refresh-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 42px;
+    padding: 0 16px;
+
+    border: 1px solid #dbe2ea;
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: #334155;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.hr-personal-leave-refresh-button:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+
+    box-shadow:
+        0 4px 12px rgba(15, 23, 42, 0.06);
+
+    transform: translateY(-1px);
+}
+
+.hr-personal-leave-refresh-button:active {
+    transform: translateY(0);
+}
+
+.hr-personal-leave-refresh-button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =========================================================
+   SPIN ANIMATION
+========================================================= */
+
+.hr-personal-leave-spin {
+    animation:
+        hr-personal-leave-spin 0.9s linear infinite;
+}
+
+@keyframes hr-personal-leave-spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.hr-personal-leave-error {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 22px;
+    padding: 13px 15px;
+
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+
+    background: #fff7f7;
+    color: #b91c1c;
+
+    font-size: 13px;
+    font-weight: 550;
+}
+
+
+/* =========================================================
+   STATISTICS GRID
+========================================================= */
+
+.hr-personal-leave-stat-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   STAT CARD
+========================================================= */
+
+.hr-personal-leave-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    min-height: 108px;
+    padding: 18px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #e5eaf0;
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 3px 12px rgba(15, 23, 42, 0.035);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.hr-personal-leave-stat-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(15, 23, 42, 0.07);
+}
+
+
+/* =========================================================
+   STAT ICON
+========================================================= */
+
+.hr-personal-leave-stat-icon {
+    width: 44px;
+    height: 44px;
+
+    flex: 0 0 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+}
+
+.hr-personal-leave-stat-icon.total {
+    background: #eef2ff;
+    color: #4f46e5;
+}
+
+.hr-personal-leave-stat-icon.pending {
+    background: #fff7e6;
+    color: #d97706;
+}
+
+.hr-personal-leave-stat-icon.approved {
+    background: #ecfdf3;
+    color: #16a34a;
+}
+
+.hr-personal-leave-stat-icon.cancelled {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   STAT TEXT
+========================================================= */
+
+.hr-personal-leave-stat-card div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hr-personal-leave-stat-card span {
+    color: #64748b;
+
+    font-size: 12px;
+    font-weight: 550;
+}
+
+.hr-personal-leave-stat-card strong {
+    color: #111827;
+
+    font-size: 25px;
+    line-height: 1;
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.hr-personal-leave-filter-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 20px;
+    padding: 15px;
+
+    border: 1px solid #e5eaf0;
+    border-radius: 13px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 3px 12px rgba(15, 23, 42, 0.03);
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.hr-personal-leave-search {
+    position: relative;
+
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+}
+
+.hr-personal-leave-search svg {
+    position: absolute;
+    left: 13px;
+
+    color: #94a3b8;
+
+    pointer-events: none;
+}
+
+.hr-personal-leave-search input {
+    width: 100%;
+    height: 42px;
+
+    box-sizing: border-box;
+
+    padding:
+        0 14px 0 40px;
+
+    border: 1px solid #dce3eb;
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+    color: #172033;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.hr-personal-leave-search input::placeholder {
+    color: #94a3b8;
+}
+
+.hr-personal-leave-search input:hover {
+    border-color: #cbd5e1;
+}
+
+.hr-personal-leave-search input:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+
+/* =========================================================
+   FILTER SELECT
+========================================================= */
+
+.hr-personal-leave-filter {
+    position: relative;
+
+    min-width: 175px;
+
+    display: flex;
+    align-items: center;
+}
+
+.hr-personal-leave-filter > svg {
+    position: absolute;
+    left: 12px;
+
+    color: #64748b;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.hr-personal-leave-filter select {
+    width: 100%;
+    height: 42px;
+
+    padding:
+        0 34px 0 36px;
+
+    border: 1px solid #dce3eb;
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+    color: #334155;
+
+    font-size: 13px;
+    font-weight: 550;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.hr-personal-leave-filter select:hover {
+    border-color: #cbd5e1;
+}
+
+.hr-personal-leave-filter select:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.hr-personal-leave-table-card {
+    overflow: hidden;
+
+    border: 1px solid #e5eaf0;
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 3px 12px rgba(15, 23, 42, 0.035);
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.hr-personal-leave-table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 19px 20px;
+
+    border-bottom: 1px solid #edf1f5;
+}
+
+.hr-personal-leave-table-header h2 {
+    margin: 0 0 4px;
+
+    color: #172033;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.hr-personal-leave-table-header span {
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.hr-personal-leave-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+.hr-personal-leave-table-wrapper::-webkit-scrollbar {
+    height: 7px;
+}
+
+.hr-personal-leave-table-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.hr-personal-leave-table-wrapper::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.hr-personal-leave-table {
+    width: 100%;
+
+    min-width: 1050px;
+
+    border-collapse: collapse;
+}
+
+.hr-personal-leave-table thead {
+    background: #f8fafc;
+}
+
+.hr-personal-leave-table th {
+    padding: 13px 16px;
+
+    border-bottom: 1px solid #e5eaf0;
+
+    color: #64748b;
+
+    text-align: left;
+    white-space: nowrap;
+
+    font-size: 11px;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.045em;
+}
+
+.hr-personal-leave-table td {
+    padding: 15px 16px;
+
+    border-bottom: 1px solid #f0f2f5;
+
+    color: #334155;
+
+    vertical-align: middle;
+
+    font-size: 13px;
+}
+
+.hr-personal-leave-table tbody tr {
+    transition:
+        background 0.15s ease;
+}
+
+.hr-personal-leave-table tbody tr:hover {
+    background: #fafbfc;
+}
+
+.hr-personal-leave-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   HR USER
+========================================================= */
+
+.hr-personal-leave-user {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    min-width: 190px;
+}
+
+.hr-personal-leave-avatar {
+    width: 39px;
+    height: 39px;
+
+    flex: 0 0 39px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eef2ff;
+    color: #4f46e5;
+
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.hr-personal-leave-user > div:last-child {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.hr-personal-leave-user strong {
+    display: block;
+
+    max-width: 170px;
+
+    overflow: hidden;
+
+    color: #1e293b;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.hr-personal-leave-user span {
+    display: block;
+
+    max-width: 170px;
+
+    overflow: hidden;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   LEAVE TYPE
+========================================================= */
+
+.hr-personal-leave-type {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 5px 9px;
+
+    border-radius: 6px;
+
+    background: #f1f5f9;
+    color: #475569;
+
+    font-size: 11px;
+    font-weight: 650;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   PERIOD
+========================================================= */
+
+.hr-personal-leave-period {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #475569;
+
+    white-space: nowrap;
+
+    font-size: 12px;
+}
+
+.hr-personal-leave-period span:nth-child(2) {
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.hr-personal-leave-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    min-width: 88px;
+
+    padding: 6px 9px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.hr-personal-leave-status.pending {
+    background: #fff7e6;
+    color: #b45309;
+}
+
+.hr-personal-leave-status.approved {
+    background: #ecfdf3;
+    color: #15803d;
+}
+
+.hr-personal-leave-status.cancelled {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.hr-personal-leave-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.hr-personal-leave-view-button,
+.hr-personal-leave-approve-button,
+.hr-personal-leave-cancel-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    min-height: 32px;
+
+    padding: 0 9px;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.hr-personal-leave-view-button {
+    border: 1px solid #dbe2ea;
+
+    background: #ffffff;
+    color: #475569;
+}
+
+.hr-personal-leave-view-button:hover {
+    border-color: #cbd5e1;
+
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+.hr-personal-leave-approve-button {
+    border: 1px solid #bbf7d0;
+
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+.hr-personal-leave-approve-button:hover {
+    border-color: #86efac;
+
+    background: #dcfce7;
+}
+
+.hr-personal-leave-cancel-button {
+    border: 1px solid #fecaca;
+
+    background: #fff7f7;
+    color: #dc2626;
+}
+
+.hr-personal-leave-cancel-button:hover {
+    border-color: #fca5a5;
+
+    background: #fee2e2;
+}
+
+.hr-personal-leave-view-button:active,
+.hr-personal-leave-approve-button:active,
+.hr-personal-leave-cancel-button:active {
+    transform: translateY(1px);
+}
+
+.hr-personal-leave-view-button:disabled,
+.hr-personal-leave-approve-button:disabled,
+.hr-personal-leave-cancel-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   LARGE ACTION BUTTONS
+========================================================= */
+
+.hr-personal-leave-approve-button.large,
+.hr-personal-leave-cancel-button.large {
+    min-height: 40px;
+
+    padding: 0 15px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.hr-personal-leave-empty {
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color: #94a3b8;
+}
+
+.hr-personal-leave-empty svg {
+    margin-bottom: 14px;
+
+    color: #cbd5e1;
+}
+
+.hr-personal-leave-empty h3 {
+    margin: 0 0 7px;
+
+    color: #334155;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.hr-personal-leave-empty p {
+    max-width: 420px;
+
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.hr-personal-leave-admin-loading {
+    min-height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    color: #64748b;
+
+    font-size: 14px;
+    font-weight: 550;
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.hr-personal-leave-modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    box-sizing: border-box;
+
+    background: rgba(15, 23, 42, 0.52);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    animation:
+        hr-personal-leave-overlay-in
+        0.18s ease;
+}
+
+@keyframes hr-personal-leave-overlay-in {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   DETAILS MODAL
+========================================================= */
+
+.hr-personal-leave-details-modal {
+    width: 100%;
+    max-width: 760px;
+    max-height: calc(100vh - 48px);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 24px 70px rgba(15, 23, 42, 0.2);
+
+    animation:
+        hr-personal-leave-modal-in
+        0.2s ease;
+}
+
+@keyframes hr-personal-leave-modal-in {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.hr-personal-leave-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 21px 22px;
+
+    border-bottom: 1px solid #edf1f5;
+}
+
+.hr-personal-leave-modal-header span {
+    color: #6366f1;
+
+    font-size: 10px;
+    font-weight: 750;
+
+    letter-spacing: 0.08em;
+}
+
+.hr-personal-leave-modal-header h2 {
+    margin: 5px 0 0;
+
+    color: #111827;
+
+    font-size: 19px;
+    font-weight: 750;
+}
+
+.hr-personal-leave-modal-header button {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 34px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #64748b;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        border-color 0.18s ease;
+}
+
+.hr-personal-leave-modal-header button:hover {
+    border-color: #cbd5e1;
+
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+
+/* =========================================================
+   DETAILS BODY
+========================================================= */
+
+.hr-personal-leave-details-body {
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 22px;
+
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+.hr-personal-leave-details-body::-webkit-scrollbar {
+    width: 7px;
+}
+
+.hr-personal-leave-details-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.hr-personal-leave-details-body::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   DETAIL SECTION
+========================================================= */
+
+.hr-personal-leave-detail-section {
+    margin-bottom: 23px;
+}
+
+.hr-personal-leave-detail-section:last-child {
+    margin-bottom: 0;
+}
+
+.hr-personal-leave-detail-section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 13px;
+
+    color: #334155;
+
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.hr-personal-leave-detail-section-title svg {
+    color: #6366f1;
+}
+
+
+/* =========================================================
+   INFO GRID
+========================================================= */
+
+.hr-personal-leave-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 1px;
+
+    overflow: hidden;
+
+    border: 1px solid #e5eaf0;
+    border-radius: 10px;
+
+    background: #e5eaf0;
+}
+
+.hr-personal-leave-info-grid > div {
+    min-height: 67px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 11px 13px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+}
+
+.hr-personal-leave-info-grid span {
+    margin-bottom: 5px;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.035em;
+}
+
+.hr-personal-leave-info-grid strong {
+    overflow: hidden;
+
+    color: #334155;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   REASON BOX
+========================================================= */
+
+.hr-personal-leave-reason-box {
+    min-height: 75px;
+
+    padding: 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #e5eaf0;
+    border-radius: 10px;
+
+    background: #f8fafc;
+    color: #475569;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   ADMIN REMARK
+========================================================= */
+
+.hr-personal-leave-admin-remark-box {
+    margin-top: 13px;
+    padding: 13px 14px;
+
+    border: 1px solid #e5eaf0;
+    border-radius: 10px;
+
+    background: #f8fafc;
+}
+
+.hr-personal-leave-admin-remark-box span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #64748b;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.hr-personal-leave-admin-remark-box p {
+    margin: 0;
+
+    color: #475569;
+
+    font-size: 13px;
+    line-height: 1.65;
+
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   DETAILS FOOTER
+========================================================= */
+
+.hr-personal-leave-details-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding: 15px 22px;
+
+    border-top: 1px solid #edf1f5;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   ACTION MODAL
+========================================================= */
+
+.hr-personal-leave-action-modal {
+    width: 100%;
+    max-width: 470px;
+
+    padding: 26px;
+
+    box-sizing: border-box;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 24px 70px rgba(15, 23, 42, 0.2);
+
+    animation:
+        hr-personal-leave-modal-in
+        0.2s ease;
+}
+
+
+/* =========================================================
+   ACTION ICON
+========================================================= */
+
+.hr-personal-leave-action-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    border-radius: 13px;
+
+    background: #eef2ff;
+    color: #6366f1;
+}
+
+.hr-personal-leave-action-modal h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 19px;
+    font-weight: 750;
+}
+
+.hr-personal-leave-action-modal > p {
+    margin: 8px 0 18px;
+
+    color: #64748b;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ACTION SUMMARY
+========================================================= */
+
+.hr-personal-leave-action-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+.hr-personal-leave-action-summary > div {
+    padding: 11px 12px;
+
+    border: 1px solid #e5eaf0;
+    border-radius: 9px;
+
+    background: #f8fafc;
+}
+
+.hr-personal-leave-action-summary span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+    font-weight: 650;
+
+    text-transform: uppercase;
+}
+
+.hr-personal-leave-action-summary strong {
+    display: block;
+
+    color: #334155;
+
+    font-size: 12px;
+    font-weight: 650;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   REMARK FIELD
+========================================================= */
+
+.hr-personal-leave-remark-field {
+    margin-bottom: 16px;
+}
+
+.hr-personal-leave-remark-field label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+
+    color: #334155;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.hr-personal-leave-remark-field label span {
+    color: #94a3b8;
+
+    font-size: 10px;
+    font-weight: 550;
+}
+
+.hr-personal-leave-remark-field textarea {
+    width: 100%;
+    min-height: 90px;
+
+    box-sizing: border-box;
+
+    padding: 11px 12px;
+
+    resize: vertical;
+
+    border: 1px solid #dce3eb;
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+    color: #334155;
+
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.55;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.hr-personal-leave-remark-field textarea::placeholder {
+    color: #a1acba;
+}
+
+.hr-personal-leave-remark-field textarea:hover {
+    border-color: #cbd5e1;
+}
+
+.hr-personal-leave-remark-field textarea:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+
+/* =========================================================
+   ACTION ERROR
+========================================================= */
+
+.hr-personal-leave-action-error {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    margin-bottom: 14px;
+    padding: 10px 11px;
+
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+
+    background: #fff7f7;
+    color: #b91c1c;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   ACTION FOOTER
+========================================================= */
+
+.hr-personal-leave-action-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 9px;
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.hr-personal-leave-secondary-button {
+    min-height: 40px;
+
+    padding: 0 15px;
+
+    border: 1px solid #dbe2ea;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #475569;
+
+    font-size: 12px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease;
+}
+
+.hr-personal-leave-secondary-button:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.hr-personal-leave-secondary-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   CONFIRM APPROVE
+========================================================= */
+
+.hr-personal-leave-confirm-approve,
+.hr-personal-leave-confirm-cancel {
+    min-height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 0 15px;
+
+    border-radius: 8px;
+
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.hr-personal-leave-confirm-approve {
+    border: 1px solid #16a34a;
+
+    background: #16a34a;
+
+    box-shadow:
+        0 4px 10px rgba(22, 163, 74, 0.16);
+}
+
+.hr-personal-leave-confirm-approve:hover {
+    background: #15803d;
+
+    box-shadow:
+        0 6px 14px rgba(22, 163, 74, 0.22);
+}
+
+.hr-personal-leave-confirm-cancel {
+    border: 1px solid #dc2626;
+
+    background: #dc2626;
+
+    box-shadow:
+        0 4px 10px rgba(220, 38, 38, 0.16);
+}
+
+.hr-personal-leave-confirm-cancel:hover {
+    background: #b91c1c;
+
+    box-shadow:
+        0 6px 14px rgba(220, 38, 38, 0.22);
+}
+
+.hr-personal-leave-confirm-approve:active,
+.hr-personal-leave-confirm-cancel:active {
+    transform: translateY(1px);
+}
+
+.hr-personal-leave-confirm-approve:disabled,
+.hr-personal-leave-confirm-cancel:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+========================================================= */
+
+.hr-personal-leave-refresh-button:focus-visible,
+.hr-personal-leave-view-button:focus-visible,
+.hr-personal-leave-approve-button:focus-visible,
+.hr-personal-leave-cancel-button:focus-visible,
+.hr-personal-leave-secondary-button:focus-visible,
+.hr-personal-leave-confirm-approve:focus-visible,
+.hr-personal-leave-confirm-cancel:focus-visible,
+.hr-personal-leave-modal-header button:focus-visible,
+.hr-personal-leave-search input:focus-visible,
+.hr-personal-leave-filter select:focus-visible,
+.hr-personal-leave-remark-field textarea:focus-visible {
+    outline: 3px solid rgba(99, 102, 241, 0.18);
+    outline-offset: 1px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - LARGE TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .hr-personal-leave-admin-page {
+        padding: 24px;
+    }
+
+    .hr-personal-leave-stat-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .hr-personal-leave-filter-card {
+        flex-wrap: wrap;
+    }
+
+    .hr-personal-leave-search {
+        flex-basis: 100%;
+    }
+
+    .hr-personal-leave-filter {
+        flex: 1;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hr-personal-leave-admin-page {
+        padding: 20px;
+    }
+
+    .hr-personal-leave-admin-header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hr-personal-leave-refresh-button {
+        align-self: flex-start;
+    }
+
+    .hr-personal-leave-info-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+    .hr-personal-leave-admin-page {
+        padding: 15px;
+    }
+
+
+    /* HEADER */
+
+    .hr-personal-leave-admin-header {
+        margin-bottom: 20px;
+    }
+
+    .hr-personal-leave-admin-header h1 {
+        font-size: 24px;
+    }
+
+    .hr-personal-leave-admin-header p {
+        font-size: 13px;
+    }
+
+    .hr-personal-leave-refresh-button {
+        width: 100%;
+    }
+
+
+    /* STATISTICS */
+
+    .hr-personal-leave-stat-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 12px;
+
+        margin-bottom: 18px;
+    }
+
+    .hr-personal-leave-stat-card {
+        min-height: 92px;
+    }
+
+
+    /* FILTER */
+
+    .hr-personal-leave-filter-card {
+        align-items: stretch;
+        flex-direction: column;
+
+        padding: 12px;
+
+        margin-bottom: 16px;
+    }
+
+    .hr-personal-leave-search {
+        width: 100%;
+    }
+
+    .hr-personal-leave-filter {
+        width: 100%;
+    }
+
+
+    /* TABLE */
+
+    .hr-personal-leave-table-header {
+        padding: 16px;
+    }
+
+    .hr-personal-leave-table {
+        min-width: 1000px;
+    }
+
+
+    /* MODAL */
+
+    .hr-personal-leave-modal-overlay {
+        align-items: flex-end;
+
+        padding: 0;
+    }
+
+    .hr-personal-leave-details-modal {
+        max-width: none;
+        max-height: 94vh;
+
+        border-radius:
+            16px 16px 0 0;
+    }
+
+    .hr-personal-leave-modal-header {
+        padding: 17px;
+    }
+
+    .hr-personal-leave-details-body {
+        padding: 17px;
+    }
+
+    .hr-personal-leave-details-footer {
+        padding: 13px 17px;
+
+        flex-direction: column-reverse;
+    }
+
+    .hr-personal-leave-details-footer
+        .hr-personal-leave-approve-button,
+    .hr-personal-leave-details-footer
+        .hr-personal-leave-cancel-button {
+        width: 100%;
+    }
+
+
+    /* INFO GRID */
+
+    .hr-personal-leave-info-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* ACTION MODAL */
+
+    .hr-personal-leave-action-modal {
+        width: calc(100% - 24px);
+
+        max-height: calc(100vh - 24px);
+
+        overflow-y: auto;
+
+        padding: 21px;
+
+        border-radius: 14px;
+    }
+
+    .hr-personal-leave-action-summary {
+        grid-template-columns:
+            1fr;
+    }
+
+    .hr-personal-leave-action-footer {
+        flex-direction: column-reverse;
+    }
+
+    .hr-personal-leave-secondary-button,
+    .hr-personal-leave-confirm-approve,
+    .hr-personal-leave-confirm-cancel {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .hr-personal-leave-admin-page {
+        padding: 12px;
+    }
+
+    .hr-personal-leave-admin-header h1 {
+        font-size: 22px;
+    }
+
+    .hr-personal-leave-stat-card {
+        padding: 15px;
+    }
+
+    .hr-personal-leave-stat-icon {
+        width: 40px;
+        height: 40px;
+
+        flex-basis: 40px;
+    }
+
+    .hr-personal-leave-stat-card strong {
+        font-size: 22px;
+    }
+
+    .hr-personal-leave-modal-header h2 {
+        font-size: 17px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hr-personal-leave-spin {
+        animation: none;
+    }
+
+    .hr-personal-leave-modal-overlay,
+    .hr-personal-leave-details-modal,
+    .hr-personal-leave-action-modal {
+        animation: none;
+    }
+
+    .hr-personal-leave-stat-card,
+    .hr-personal-leave-refresh-button,
+    .hr-personal-leave-view-button,
+    .hr-personal-leave-approve-button,
+    .hr-personal-leave-cancel-button,
+    .hr-personal-leave-confirm-approve,
+    .hr-personal-leave-confirm-cancel {
+        transition: none;
+    }
+
+}

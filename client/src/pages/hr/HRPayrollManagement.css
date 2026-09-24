@@ -1,0 +1,1383 @@
+/* =========================================================
+   HR PAYROLL MANAGEMENT
+========================================================= */
+
+.hr-payroll-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+
+    background: #f5f7fb;
+    color: #172033;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.hr-payroll-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.hr-payroll-title-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.hr-payroll-title-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #172033;
+    color: #ffffff;
+
+    box-shadow: 0 8px 20px rgba(23, 32, 51, 0.15);
+}
+
+.hr-payroll-header h1 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 750;
+    letter-spacing: -0.4px;
+}
+
+.hr-payroll-header p {
+    margin: 5px 0 0;
+    color: #718096;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   REFRESH
+========================================================= */
+
+.hr-payroll-refresh-btn {
+    height: 42px;
+    padding: 0 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    border: 1px solid #dce2eb;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #344054;
+
+    cursor: pointer;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.hr-payroll-refresh-btn:hover {
+    background: #f8fafc;
+    border-color: #c7ced9;
+}
+
+.hr-payroll-refresh-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ALERTS
+========================================================= */
+
+.hr-payroll-alert {
+    min-height: 48px;
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 11px;
+
+    margin-bottom: 18px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hr-payroll-alert.success {
+    background: #ecfdf3;
+    border: 1px solid #bbf7d0;
+    color: #15803d;
+}
+
+.hr-payroll-alert.error {
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    color: #be123c;
+}
+
+.hr-payroll-alert button {
+    margin-left: auto;
+
+    border: 0;
+    background: transparent;
+
+    color: inherit;
+
+    cursor: pointer;
+
+    display: flex;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.hr-payroll-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-bottom: 18px;
+}
+
+.hr-payroll-summary-card {
+    min-height: 100px;
+
+    padding: 18px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8ecf2;
+    border-radius: 14px;
+
+    box-shadow:
+        0 3px 14px rgba(15, 23, 42, 0.04);
+}
+
+.summary-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+}
+
+.summary-icon.blue {
+    background: #eaf2ff;
+    color: #2563eb;
+}
+
+.summary-icon.orange {
+    background: #fff7e6;
+    color: #d97706;
+}
+
+.summary-icon.purple {
+    background: #f3eefe;
+    color: #7c3aed;
+}
+
+.summary-icon.green {
+    background: #eafaf1;
+    color: #16a34a;
+}
+
+.summary-icon.red {
+    background: #fff0f1;
+    color: #dc2626;
+}
+
+.hr-payroll-summary-card span {
+    display: block;
+
+    color: #7b8495;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    margin-bottom: 4px;
+}
+
+.hr-payroll-summary-card strong {
+    font-size: 22px;
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   FINANCIAL
+========================================================= */
+
+.hr-payroll-financial-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 18px;
+}
+
+.hr-payroll-financial-grid > div {
+    padding: 19px 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8ecf2;
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.hr-payroll-financial-grid span {
+    color: #687386;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.hr-payroll-financial-grid strong {
+    font-size: 18px;
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+.hr-payroll-filter-card {
+    padding: 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8ecf2;
+    border-radius: 14px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(260px, 1fr)
+        170px
+        170px
+        150px;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+.hr-payroll-search {
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 0 12px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #dce2eb;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #8791a1;
+}
+
+.hr-payroll-search input {
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+    outline: 0;
+
+    font-size: 13px;
+
+    color: #172033;
+
+    background: transparent;
+}
+
+.hr-payroll-filter-card select {
+    height: 42px;
+
+    padding: 0 12px;
+
+    border: 1px solid #dce2eb;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #344054;
+
+    outline: 0;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.hr-payroll-table-card {
+    background: #ffffff;
+
+    border: 1px solid #e8ecf2;
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 3px 14px rgba(15, 23, 42, 0.035);
+}
+
+.hr-payroll-table-header {
+    min-height: 72px;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid #edf0f5;
+}
+
+.hr-payroll-table-header h2 {
+    margin: 0;
+
+    font-size: 17px;
+    font-weight: 750;
+}
+
+.hr-payroll-table-header p {
+    margin: 4px 0 0;
+
+    color: #8a94a6;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.hr-payroll-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.hr-payroll-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 1120px;
+}
+
+.hr-payroll-table th {
+    height: 48px;
+
+    padding: 0 16px;
+
+    background: #fafbfc;
+
+    border-bottom: 1px solid #edf0f5;
+
+    color: #667085;
+
+    font-size: 11px;
+    font-weight: 750;
+
+    text-align: left;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.45px;
+}
+
+.hr-payroll-table td {
+    padding: 15px 16px;
+
+    border-bottom: 1px solid #f0f2f5;
+
+    font-size: 13px;
+
+    vertical-align: middle;
+}
+
+.hr-payroll-table tbody tr:hover {
+    background: #fafcff;
+}
+
+.hr-payroll-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+/* =========================================================
+   EMPLOYEE
+========================================================= */
+
+.hr-payroll-employee {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    min-width: 180px;
+}
+
+.employee-avatar {
+    width: 39px;
+    height: 39px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background: #e9eef7;
+
+    color: #344054;
+
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.employee-avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.employee-avatar.large {
+    width: 50px;
+    height: 50px;
+
+    font-size: 15px;
+}
+
+.hr-payroll-employee strong {
+    display: block;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: #1d2939;
+}
+
+.hr-payroll-employee span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8a94a6;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   PERIOD
+========================================================= */
+
+.payroll-period {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #475467;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   ATTENDANCE
+========================================================= */
+
+.attendance-mini strong {
+    font-weight: 750;
+}
+
+.attendance-mini span {
+    color: #8993a4;
+}
+
+
+/* =========================================================
+   MONEY
+========================================================= */
+
+.deduction-value {
+    color: #dc2626;
+}
+
+.net-value {
+    color: #15803d;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.hr-payroll-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    min-height: 26px;
+
+    padding: 0 9px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.hr-payroll-status > span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+}
+
+.status-draft {
+    color: #b45309;
+    background: #fff7e6;
+}
+
+.status-approved {
+    color: #6d28d9;
+    background: #f4edff;
+}
+
+.status-paid {
+    color: #15803d;
+    background: #ecfdf3;
+}
+
+.status-cancelled {
+    color: #b91c1c;
+    background: #fff1f2;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.hr-payroll-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hr-payroll-actions button {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.18s ease;
+}
+
+.hr-payroll-actions button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.action-view {
+    border: 1px solid #dce2eb;
+    background: #ffffff;
+    color: #475467;
+}
+
+.action-view:hover {
+    background: #f5f7fa;
+}
+
+.action-approve {
+    border: 1px solid #bbf7d0;
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+.action-approve:hover {
+    background: #dcfce7;
+}
+
+.action-pay {
+    border: 1px solid #bfdbfe;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.action-pay:hover {
+    background: #dbeafe;
+}
+
+.action-cancel {
+    border: 1px solid #fecdd3;
+    background: #fff1f2;
+    color: #dc2626;
+}
+
+.action-cancel:hover {
+    background: #ffe4e6;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.hr-payroll-loading {
+    min-height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    color: #7b8495;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.hr-payroll-empty {
+    min-height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    color: #98a2b3;
+
+    text-align: center;
+}
+
+.hr-payroll-empty h3 {
+    margin: 14px 0 5px;
+
+    color: #344054;
+
+    font-size: 16px;
+}
+
+.hr-payroll-empty p {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.hr-payroll-modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(15, 23, 42, 0.55);
+
+    backdrop-filter: blur(3px);
+}
+
+.hr-payroll-modal {
+    width: min(820px, 100%);
+
+    max-height: calc(100vh - 50px);
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 25px 70px rgba(15, 23, 42, 0.25);
+}
+
+.hr-payroll-modal-header {
+    min-height: 70px;
+
+    padding: 0 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #edf0f5;
+}
+
+.hr-payroll-modal-header h2 {
+    margin: 0;
+
+    font-size: 18px;
+}
+
+.hr-payroll-modal-header p {
+    margin: 4px 0 0;
+
+    color: #8993a4;
+
+    font-size: 12px;
+}
+
+.hr-payroll-modal-header > button {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: #f4f6f8;
+    color: #667085;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MODAL EMPLOYEE
+========================================================= */
+
+.payroll-detail-employee {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    margin: 20px 22px;
+
+    padding: 15px;
+
+    border: 1px solid #e9edf3;
+
+    border-radius: 12px;
+
+    background: #fafbfc;
+}
+
+.payroll-detail-employee h3 {
+    margin: 0;
+
+    font-size: 15px;
+}
+
+.payroll-detail-employee p {
+    margin: 4px 0 0;
+
+    color: #8a94a6;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   EMPLOYEE INFO
+========================================================= */
+
+.payroll-detail-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    padding: 0 22px 20px;
+}
+
+.payroll-detail-info-grid > div {
+    padding: 13px;
+
+    border: 1px solid #edf0f5;
+
+    border-radius: 10px;
+}
+
+.payroll-detail-info-grid span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: #8a94a6;
+
+    font-size: 11px;
+
+    margin-bottom: 6px;
+}
+
+.payroll-detail-info-grid strong {
+    display: block;
+
+    color: #344054;
+
+    font-size: 12px;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   DETAIL SECTION
+========================================================= */
+
+.payroll-detail-section {
+    padding: 18px 22px;
+
+    border-top: 1px solid #edf0f5;
+}
+
+.payroll-detail-section h3 {
+    margin: 0 0 14px;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   DETAIL GRID
+========================================================= */
+
+.detail-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 9px;
+}
+
+.detail-grid > div {
+    padding: 11px;
+
+    background: #fafbfc;
+
+    border: 1px solid #edf0f5;
+
+    border-radius: 9px;
+}
+
+.detail-grid span {
+    display: block;
+
+    color: #8a94a6;
+
+    font-size: 10px;
+
+    margin-bottom: 5px;
+}
+
+.detail-grid strong {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SALARY LINES
+========================================================= */
+
+.salary-lines {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.salary-lines > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 8px;
+
+    border-bottom: 1px dashed #e8ebf0;
+}
+
+.salary-lines span {
+    color: #667085;
+
+    font-size: 12px;
+}
+
+.salary-lines strong {
+    color: #344054;
+
+    font-size: 12px;
+}
+
+.salary-lines .salary-total {
+    margin-top: 4px;
+
+    padding-top: 11px;
+
+    border-top: 1px solid #dfe4eb;
+    border-bottom: 0;
+}
+
+.salary-lines .salary-total span {
+    color: #1d2939;
+
+    font-weight: 700;
+}
+
+.salary-lines .salary-total strong {
+    font-size: 15px;
+}
+
+.deduction-total strong {
+    color: #dc2626 !important;
+}
+
+
+/* =========================================================
+   NET
+========================================================= */
+
+.payroll-net-box {
+    margin: 20px 22px;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.payroll-net-box > div span {
+    display: block;
+
+    color: #4b7a5a;
+
+    font-size: 11px;
+
+    margin-bottom: 4px;
+}
+
+.payroll-net-box > div strong {
+    color: #15803d;
+
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   MODAL ACTIONS
+========================================================= */
+
+.hr-payroll-modal-actions {
+    padding: 17px 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 9px;
+
+    border-top: 1px solid #edf0f5;
+}
+
+.hr-payroll-modal-actions button {
+    min-height: 40px;
+
+    padding: 0 15px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.modal-close-btn {
+    border: 1px solid #dce2eb;
+
+    background: #ffffff;
+
+    color: #475467;
+}
+
+.modal-approve-btn {
+    border: 1px solid #15803d;
+
+    background: #15803d;
+
+    color: #ffffff;
+}
+
+.modal-pay-btn {
+    border: 1px solid #2563eb;
+
+    background: #2563eb;
+
+    color: #ffffff;
+}
+
+.hr-payroll-modal-actions button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   PAYMENT MODAL
+========================================================= */
+
+.hr-payment-modal {
+    width: min(520px, 100%);
+
+    background: #ffffff;
+
+    border-radius: 17px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 70px rgba(15, 23, 42, 0.25);
+}
+
+.payment-summary {
+    margin: 20px 22px;
+
+    padding: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 11px;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+}
+
+.payment-summary span {
+    color: #475467;
+
+    font-size: 12px;
+}
+
+.payment-summary strong {
+    color: #2563eb;
+
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.payment-form-group {
+    padding: 0 22px;
+
+    margin-bottom: 16px;
+}
+
+.payment-form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #344054;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.payment-form-group select,
+.payment-form-group input {
+    width: 100%;
+
+    height: 43px;
+
+    box-sizing: border-box;
+
+    padding: 0 12px;
+
+    border: 1px solid #dce2eb;
+
+    border-radius: 9px;
+
+    outline: 0;
+
+    background: #ffffff;
+
+    color: #344054;
+
+    font-size: 13px;
+}
+
+.payment-form-group input:focus,
+.payment-form-group select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================================================
+   WARNING
+========================================================= */
+
+.payment-warning {
+    margin: 4px 22px 20px;
+
+    padding: 12px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    border-radius: 9px;
+
+    background: #fff7e6;
+
+    border: 1px solid #fde68a;
+
+    color: #a16207;
+}
+
+.payment-warning p {
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SPINNER
+========================================================= */
+
+.hr-payroll-spin {
+    animation:
+        hrPayrollSpin 0.8s linear infinite;
+}
+
+@keyframes hrPayrollSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1250px) {
+
+    .hr-payroll-summary-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .hr-payroll-filter-card {
+        grid-template-columns:
+            1fr
+            160px
+            160px
+            150px;
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .hr-payroll-page {
+        padding: 20px;
+    }
+
+    .hr-payroll-summary-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hr-payroll-financial-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .hr-payroll-filter-card {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .payroll-detail-info-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .detail-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .hr-payroll-page {
+        padding: 14px;
+    }
+
+    .hr-payroll-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hr-payroll-refresh-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hr-payroll-summary-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .hr-payroll-filter-card {
+        grid-template-columns:
+            1fr;
+    }
+
+    .detail-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hr-payroll-modal-overlay {
+        padding: 10px;
+    }
+
+    .hr-payroll-modal {
+        max-height:
+            calc(100vh - 20px);
+    }
+
+    .hr-payroll-modal-actions {
+        flex-direction: column;
+    }
+
+    .hr-payroll-modal-actions button {
+        width: 100%;
+    }
+
+}

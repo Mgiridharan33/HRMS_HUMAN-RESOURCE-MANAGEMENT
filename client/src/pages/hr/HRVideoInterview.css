@@ -1,0 +1,1352 @@
+/* =========================================================
+   HR VIDEO INTERVIEW PAGE
+========================================================= */
+
+.hr-video-page {
+    width: 100%;
+    min-height: 100%;
+    padding: 28px;
+    background: #f7f8fc;
+    color: #172033;
+    box-sizing: border-box;
+}
+
+.hr-video-page *,
+.hr-video-page *::before,
+.hr-video-page *::after {
+    box-sizing: border-box;
+}
+
+.hr-video-page button,
+.hr-video-page input,
+.hr-video-page select,
+.hr-video-page textarea {
+    font: inherit;
+}
+
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.hr-video-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.hr-video-title-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.hr-video-title-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef2ff;
+    color: #4f46e5;
+}
+
+.hr-video-header h1 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 750;
+    letter-spacing: -0.4px;
+}
+
+.hr-video-header p {
+    margin: 5px 0 0;
+    color: #7b8497;
+    font-size: 14px;
+}
+
+.hr-video-refresh-btn {
+    height: 42px;
+    padding: 0 16px;
+    border: 1px solid #e1e5ed;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #30394b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 650;
+    transition: 0.2s ease;
+}
+
+.hr-video-refresh-btn:hover {
+    border-color: #cdd3df;
+    background: #fafbfc;
+}
+
+.hr-video-refresh-btn:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.hr-video-refresh-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.hr-video-error {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 15px;
+    margin-bottom: 20px;
+    border-radius: 11px;
+    border: 1px solid #fecaca;
+    background: #fff5f5;
+    color: #b42318;
+    font-size: 13px;
+}
+
+.hr-video-error span {
+    flex: 1;
+}
+
+.hr-video-error button {
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+}
+
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.hr-video-summary {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.hr-video-summary-card {
+    background: #ffffff;
+    border: 1px solid #e7eaf0;
+    border-radius: 15px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow:
+        0 3px 12px rgba(20, 30, 50, 0.035);
+}
+
+.hr-video-summary-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f3f8;
+    color: #596579;
+}
+
+.hr-video-summary-card.ready
+.hr-video-summary-icon {
+    background: #ecfdf3;
+    color: #039855;
+}
+
+.hr-video-summary-card.sent
+.hr-video-summary-icon {
+    background: #eff8ff;
+    color: #1570ef;
+}
+
+.hr-video-summary-card.completed
+.hr-video-summary-icon {
+    background: #f4f3ff;
+    color: #6941c6;
+}
+
+.hr-video-summary-card span {
+    display: block;
+    color: #7b8497;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.hr-video-summary-card strong {
+    display: block;
+    font-size: 22px;
+    line-height: 1;
+    color: #182230;
+}
+
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.hr-video-toolbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.hr-video-search {
+    height: 44px;
+    flex: 1;
+    max-width: 550px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 13px;
+    border: 1px solid #dfe3eb;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #8a94a6;
+}
+
+.hr-video-search:focus-within {
+    border-color: #9da8ff;
+    box-shadow:
+        0 0 0 3px rgba(79, 70, 229, 0.08);
+}
+
+.hr-video-search input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-size: 13px;
+    color: #172033;
+}
+
+.hr-video-search input::placeholder {
+    color: #a0a8b7;
+}
+
+.hr-video-search button {
+    border: 0;
+    background: transparent;
+    color: #8a94a6;
+    cursor: pointer;
+    display: flex;
+}
+
+.hr-video-filter {
+    position: relative;
+    height: 44px;
+    min-width: 205px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 13px;
+    border: 1px solid #dfe3eb;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.hr-video-filter span {
+    color: #7b8497;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.hr-video-filter select {
+    appearance: none;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    flex: 1;
+    font-size: 13px;
+    color: #30394b;
+    cursor: pointer;
+}
+
+.hr-video-filter svg {
+    pointer-events: none;
+    color: #8993a4;
+}
+
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.hr-video-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e5e8ef;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow:
+        0 3px 14px rgba(20, 30, 50, 0.035);
+}
+
+.hr-video-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1080px;
+}
+
+.hr-video-table th {
+    height: 50px;
+    padding: 0 16px;
+    background: #fafbfc;
+    border-bottom: 1px solid #e8ebf0;
+    text-align: left;
+    color: #7a8496;
+    font-size: 11px;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.55px;
+    white-space: nowrap;
+}
+
+.hr-video-table td {
+    padding: 15px 16px;
+    border-bottom: 1px solid #eef0f4;
+    vertical-align: middle;
+}
+
+.hr-video-table tbody tr {
+    transition: background 0.18s ease;
+}
+
+.hr-video-table tbody tr:hover {
+    background: #fafbff;
+}
+
+.hr-video-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+
+/* =========================================================
+   CANDIDATE
+========================================================= */
+
+.hr-video-candidate {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 190px;
+}
+
+.hr-video-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    flex: 0 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef2ff;
+    color: #4f46e5;
+}
+
+.hr-video-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hr-video-candidate strong,
+.hr-video-job strong {
+    display: block;
+    color: #1c2534;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.hr-video-candidate span,
+.hr-video-job span {
+    display: block;
+    margin-top: 3px;
+    color: #8a94a6;
+    font-size: 11px;
+}
+
+
+
+/* =========================================================
+   JOB
+========================================================= */
+
+.hr-video-job {
+    min-width: 150px;
+}
+
+
+
+/* =========================================================
+   INTERVIEWER
+========================================================= */
+
+.hr-video-interviewer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 155px;
+    color: #596579;
+}
+
+.hr-video-interviewer > div {
+    min-width: 0;
+}
+
+.hr-video-interviewer strong {
+    display: block;
+    color: #30394b;
+    font-size: 12px;
+}
+
+.hr-video-interviewer span {
+    display: block;
+    color: #929aaa;
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+
+
+/* =========================================================
+   SCHEDULE
+========================================================= */
+
+.hr-video-schedule {
+    min-width: 145px;
+}
+
+.hr-video-schedule > div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #596579;
+    font-size: 12px;
+}
+
+.hr-video-schedule > div + div {
+    margin-top: 6px;
+}
+
+.hr-video-schedule svg {
+    color: #8993a4;
+}
+
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.hr-video-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 28px;
+    padding: 0 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.hr-video-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.hr-video-status-ready {
+    color: #027a48;
+    background: #ecfdf3;
+}
+
+.hr-video-status-sent {
+    color: #175cd3;
+    background: #eff8ff;
+}
+
+.hr-video-status-completed {
+    color: #6941c6;
+    background: #f4f3ff;
+}
+
+.hr-video-status-danger {
+    color: #b42318;
+    background: #fff1f0;
+}
+
+.hr-video-status-pending {
+    color: #b54708;
+    background: #fffaeb;
+}
+
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.hr-video-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.hr-video-action {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #e1e5ec;
+    border-radius: 9px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.18s ease;
+}
+
+.hr-video-action.view {
+    color: #475467;
+}
+
+.hr-video-action.view:hover {
+    background: #f6f7f9;
+    border-color: #cfd5df;
+}
+
+.hr-video-action.send {
+    color: #175cd3;
+    border-color: #bfdbfe;
+    background: #eff8ff;
+}
+
+.hr-video-action.send:hover {
+    background: #dbeafe;
+}
+
+.hr-video-action.complete {
+    color: #027a48;
+    border-color: #abefc6;
+    background: #ecfdf3;
+}
+
+.hr-video-action.complete:hover {
+    background: #d1fadf;
+}
+
+.hr-video-action:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.hr-video-action:focus-visible,
+.hr-video-refresh-btn:focus-visible,
+.hr-video-empty button:focus-visible,
+.hr-video-modal-header > button:focus-visible,
+.hr-video-link-row > button:focus-visible,
+.hr-video-modal-footer button:focus-visible,
+.hr-video-confirm-actions button:focus-visible {
+    outline: 3px solid rgba(79, 70, 229, 0.22);
+    outline-offset: 2px;
+}
+
+.hr-video-completed-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #027a48;
+}
+
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.hr-video-empty {
+    background: #ffffff;
+    border: 1px solid #e5e8ef;
+    border-radius: 15px;
+    min-height: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    text-align: center;
+}
+
+.hr-video-empty-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f3f7;
+    color: #667085;
+    margin-bottom: 16px;
+}
+
+.hr-video-empty h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
+.hr-video-empty p {
+    margin: 7px 0 18px;
+    max-width: 430px;
+    color: #8a94a6;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.hr-video-empty button {
+    height: 38px;
+    padding: 0 15px;
+    border: 1px solid #dfe3eb;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #344054;
+    cursor: pointer;
+    font-weight: 650;
+}
+
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.hr-video-loading {
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hr-video-spinner {
+    width: 34px;
+    height: 34px;
+    border: 3px solid #e4e7ec;
+    border-top-color: #4f46e5;
+    border-radius: 50%;
+    animation: hrVideoSpin 0.8s linear infinite;
+    margin-bottom: 18px;
+}
+
+.hr-video-loading h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.hr-video-loading p {
+    margin: 7px 0 0;
+    color: #8a94a6;
+    font-size: 13px;
+}
+
+.hr-video-spin {
+    animation: hrVideoSpin 0.8s linear infinite;
+}
+
+@keyframes hrVideoSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.hr-video-modal-backdrop,
+.hr-video-confirm-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.52);
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+}
+
+.hr-video-modal {
+    width: min(820px, 100%);
+    max-height: calc(100vh - 44px);
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+        0 25px 70px rgba(15, 23, 42, 0.2);
+}
+
+.hr-video-modal-header {
+    min-height: 72px;
+    padding: 0 22px;
+    border-bottom: 1px solid #e9ecf1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hr-video-modal-header span {
+    display: block;
+    color: #667085;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.hr-video-modal-header h2 {
+    margin: 4px 0 0;
+    font-size: 19px;
+}
+
+.hr-video-modal-header > button {
+    width: 35px;
+    height: 35px;
+    border: 0;
+    border-radius: 9px;
+    background: #f2f4f7;
+    color: #667085;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.hr-video-modal-body {
+    padding: 22px;
+    overflow-y: auto;
+}
+
+.hr-video-detail-section {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eef0f4;
+}
+
+.hr-video-detail-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.hr-video-section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #4f46e5;
+    margin-bottom: 14px;
+}
+
+.hr-video-section-title h3 {
+    margin: 0;
+    color: #344054;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+
+
+/* =========================================================
+   CANDIDATE DETAIL
+========================================================= */
+
+.hr-video-candidate-detail {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.hr-video-large-avatar {
+    width: 58px;
+    height: 58px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef2ff;
+    color: #4f46e5;
+}
+
+.hr-video-large-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hr-video-candidate-detail h3 {
+    margin: 0 0 7px;
+    font-size: 16px;
+}
+
+.hr-video-candidate-detail > div:last-child > div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #7b8497;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+
+
+/* =========================================================
+   INFO GRID
+========================================================= */
+
+.hr-video-info-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.hr-video-info-grid > div {
+    padding: 13px;
+    border: 1px solid #eaecf0;
+    border-radius: 10px;
+    background: #fafbfc;
+}
+
+.hr-video-info-grid span {
+    display: block;
+    color: #8a94a6;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.hr-video-info-grid strong {
+    display: block;
+    color: #344054;
+    font-size: 12px;
+}
+
+
+
+/* =========================================================
+   PERSON
+========================================================= */
+
+.hr-video-person-card {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 13px;
+    border: 1px solid #e8ebf0;
+    border-radius: 11px;
+}
+
+.hr-video-person-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #f1f3ff;
+    color: #4f46e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hr-video-person-card strong {
+    display: block;
+    font-size: 13px;
+}
+
+.hr-video-person-card span {
+    display: block;
+    color: #8a94a6;
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+
+
+/* =========================================================
+   MEETING
+========================================================= */
+
+.hr-video-meeting-box {
+    padding: 15px;
+    border: 1px solid #dbeafe;
+    border-radius: 12px;
+    background: #f8fbff;
+}
+
+.hr-video-link-row {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.hr-video-link-icon {
+    width: 39px;
+    height: 39px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dbeafe;
+    color: #175cd3;
+}
+
+.hr-video-link-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.hr-video-link-content span {
+    display: block;
+    color: #667085;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.hr-video-link-content strong {
+    display: block;
+    margin-top: 3px;
+    color: #175cd3;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hr-video-link-row > button {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #175cd3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.hr-video-open-link {
+    margin-top: 13px;
+    height: 38px;
+    padding: 0 13px;
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border-radius: 8px;
+    background: #175cd3;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.hr-video-open-link:hover {
+    background: #1849a9;
+}
+
+.hr-video-open-link:focus-visible {
+    outline: 3px solid rgba(23, 92, 211, 0.24);
+    outline-offset: 2px;
+}
+
+.hr-video-link-row > button:hover {
+    background: #eff6ff;
+    border-color: #93c5fd;
+}
+
+
+
+/* =========================================================
+   NOTES
+========================================================= */
+
+.hr-video-notes {
+    padding: 13px;
+    border-radius: 10px;
+    background: #fafbfc;
+    border: 1px solid #eaecf0;
+    color: #667085;
+    font-size: 13px;
+    line-height: 1.65;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.hr-video-detail-section > span {
+    display: block;
+    color: #8a94a6;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+
+/* =========================================================
+   APPROVAL
+========================================================= */
+
+.hr-video-approval-box {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.hr-video-approval-box > div {
+    padding: 12px;
+    border-radius: 10px;
+    background: #fafbfc;
+    border: 1px solid #eaecf0;
+}
+
+.hr-video-approval-box span {
+    display: block;
+    color: #8a94a6;
+    font-size: 10px;
+}
+
+.hr-video-approval-box strong {
+    display: block;
+    margin-top: 5px;
+    color: #344054;
+    font-size: 11px;
+}
+
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.hr-video-modal-footer {
+    padding: 15px 22px;
+    border-top: 1px solid #e9ecf1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+    flex-wrap: wrap;
+}
+
+.hr-video-secondary-btn,
+.hr-video-primary-btn,
+.hr-video-complete-btn,
+.hr-video-danger-btn {
+    min-height: 39px;
+    padding: 0 14px;
+    border-radius: 9px;
+    border: 1px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.hr-video-secondary-btn {
+    background: #ffffff;
+    border-color: #dfe3eb;
+    color: #344054;
+}
+
+.hr-video-secondary-btn:hover:not(:disabled) {
+    border-color: #c5ccd8;
+    background: #f8fafc;
+}
+
+.hr-video-primary-btn {
+    background: #4f46e5;
+    color: #ffffff;
+}
+
+.hr-video-primary-btn:hover {
+    background: #4338ca;
+}
+
+.hr-video-complete-btn {
+    background: #039855;
+    color: #ffffff;
+}
+
+.hr-video-complete-btn:hover {
+    background: #027a48;
+}
+
+.hr-video-danger-btn {
+    background: #fff1f0;
+    border-color: #fecaca;
+    color: #b42318;
+}
+
+.hr-video-danger-btn:hover {
+    background: #fee4e2;
+}
+
+.hr-video-modal-footer button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+
+/* =========================================================
+   CONFIRM MODAL
+========================================================= */
+
+.hr-video-confirm-modal {
+    width: min(440px, 100%);
+    background: #ffffff;
+    border-radius: 17px;
+    padding: 25px;
+    box-shadow:
+        0 25px 70px rgba(15, 23, 42, 0.2);
+}
+
+.hr-video-confirm-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff1f0;
+    color: #d92d20;
+    margin-bottom: 15px;
+}
+
+.hr-video-confirm-modal h2 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.hr-video-confirm-modal p {
+    margin: 8px 0 18px;
+    color: #667085;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.hr-video-confirm-modal label {
+    display: block;
+    margin-bottom: 7px;
+    color: #344054;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.hr-video-confirm-modal textarea {
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+    border: 1px solid #dfe3eb;
+    border-radius: 9px;
+    padding: 11px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.hr-video-confirm-modal textarea:focus {
+    border-color: #9da8ff;
+    box-shadow:
+        0 0 0 3px rgba(79, 70, 229, 0.08);
+}
+
+.hr-video-confirm-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+    margin-top: 17px;
+}
+
+.hr-video-confirm-actions button {
+    min-height: 38px;
+    padding: 0 13px;
+    border-radius: 9px;
+    border: 1px solid #dfe3eb;
+    background: #ffffff;
+    color: #344054;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.hr-video-confirm-actions button.danger {
+    border-color: #d92d20;
+    background: #d92d20;
+    color: #ffffff;
+}
+
+.hr-video-confirm-actions button.danger:hover:not(:disabled) {
+    border-color: #b42318;
+    background: #b42318;
+}
+
+.hr-video-confirm-actions button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .hr-video-summary {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .hr-video-page {
+        padding: 18px;
+    }
+
+    .hr-video-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hr-video-refresh-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hr-video-toolbar {
+        flex-direction: column;
+    }
+
+    .hr-video-search {
+        max-width: none;
+    }
+
+    .hr-video-filter {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hr-video-info-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .hr-video-approval-box {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .hr-video-page {
+        padding: 13px;
+    }
+
+    .hr-video-summary {
+        grid-template-columns:
+            1fr;
+    }
+
+    .hr-video-title-row {
+        align-items: flex-start;
+    }
+
+    .hr-video-title-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .hr-video-header h1 {
+        font-size: 21px;
+    }
+
+    .hr-video-modal-backdrop,
+    .hr-video-confirm-backdrop {
+        padding: 8px;
+    }
+
+    .hr-video-modal {
+        max-height: calc(100vh - 16px);
+        border-radius: 14px;
+    }
+
+    .hr-video-modal-header {
+        padding: 0 15px;
+    }
+
+    .hr-video-modal-body {
+        padding: 15px;
+    }
+
+    .hr-video-modal-footer {
+        padding: 13px 15px;
+    }
+
+    .hr-video-modal-footer button {
+        flex: 1;
+    }
+
+    .hr-video-confirm-modal {
+        padding: 20px;
+    }
+
+}

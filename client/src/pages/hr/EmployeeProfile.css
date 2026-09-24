@@ -1,0 +1,696 @@
+/* =========================================================
+   HR EMPLOYEE PROFILE PAGE
+========================================================= */
+
+.employee-profile-page {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 28px 32px 40px;
+
+    background: #f7f8fa;
+    color: #111827;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.employee-profile-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    height: 40px;
+
+    padding: 0 14px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.back-button:hover {
+    background: #f3f6fb;
+    color: #2563eb;
+    border-color: #dbe5ff;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.edit-profile-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    height: 40px;
+
+    padding: 0 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.edit-profile-button:hover {
+    background: #1d4ed8;
+}
+
+.edit-profile-button:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================================================
+   PROFILE CARD
+========================================================= */
+
+.employee-profile-card {
+    width: 100%;
+
+    min-height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 26px 28px;
+
+    margin-bottom: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+
+/* =========================================================
+   PROFILE MAIN
+========================================================= */
+
+.employee-profile-main {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   PROFILE AVATAR
+========================================================= */
+
+.employee-profile-avatar {
+    width: 78px;
+    height: 78px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    background: #eaf1ff;
+    color: #2563eb;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    border: 1px solid #dbe5ff;
+}
+
+.employee-profile-avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================================================
+   PROFILE NAME
+========================================================= */
+
+.employee-profile-name {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.employee-profile-name h1 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 24px;
+    line-height: 30px;
+
+    font-weight: 700;
+}
+
+
+.employee-profile-name p {
+    margin: 5px 0 10px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.employee-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    min-height: 27px;
+
+    padding: 0 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+.employee-status span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+
+.employee-status.active {
+    background: #ecfdf3;
+    color: #15803d;
+}
+
+
+.employee-status.active span {
+    background: #22c55e;
+}
+
+
+.employee-status.inactive {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+
+.employee-status.inactive span {
+    background: #ef4444;
+}
+
+
+/* =========================================================
+   EMPLOYEE ID
+========================================================= */
+
+.employee-profile-id {
+    min-width: 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 6px;
+}
+
+
+.employee-profile-id span {
+    color: #9ca3af;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.6px;
+}
+
+
+.employee-profile-id strong {
+    color: #111827;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INFORMATION GRID
+========================================================= */
+
+.employee-profile-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   INFORMATION CARD
+========================================================= */
+
+.employee-info-card {
+    min-width: 0;
+
+    padding: 22px 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 2px 8px rgba(15, 23, 42, 0.035);
+}
+
+
+/* =========================================================
+   INFORMATION HEADER
+========================================================= */
+
+.employee-info-header {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding-bottom: 15px;
+
+    margin-bottom: 4px;
+
+    border-bottom: 1px solid #f0f1f3;
+
+    color: #2563eb;
+}
+
+
+.employee-info-header h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INFORMATION LIST
+========================================================= */
+
+.employee-info-list {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.employee-info-list > div {
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom: 1px solid #f3f4f6;
+}
+
+
+.employee-info-list > div:last-child {
+    border-bottom: none;
+}
+
+
+.employee-info-list span {
+    flex-shrink: 0;
+
+    color: #8b95a1;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+.employee-info-list strong {
+    max-width: 65%;
+
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-align: right;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   CONTACT INFORMATION
+========================================================= */
+
+.employee-contact-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding-top: 10px;
+}
+
+
+.employee-contact-list a {
+    min-height: 44px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 12px;
+
+    border: 1px solid #eef0f3;
+    border-radius: 8px;
+
+    background: #fafbfc;
+
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.employee-contact-list a svg {
+    flex-shrink: 0;
+
+    color: #2563eb;
+}
+
+
+.employee-contact-list a:hover {
+    background: #f3f6fb;
+
+    border-color: #dbe5ff;
+
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.employee-profile-loading {
+    width: 100%;
+    min-height: 60vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    background: #f7f8fa;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+.employee-profile-loading svg {
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   EMPTY / NOT FOUND
+========================================================= */
+
+.employee-profile-empty {
+    width: 100%;
+    min-height: 60vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    background: #f7f8fa;
+
+    color: #6b7280;
+
+    text-align: center;
+}
+
+
+.employee-profile-empty svg {
+    color: #9ca3af;
+}
+
+
+.employee-profile-empty h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 20px;
+}
+
+
+.employee-profile-empty button {
+    height: 40px;
+
+    padding: 0 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.employee-profile-empty button:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================================================
+   SPINNER
+========================================================= */
+
+.spin {
+    animation: employeeProfileSpin 1s linear infinite;
+}
+
+
+@keyframes employeeProfileSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .employee-profile-page {
+        padding: 22px;
+    }
+
+    .employee-profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .employee-profile-page {
+        padding: 16px;
+    }
+
+    .employee-profile-header {
+        gap: 10px;
+    }
+
+    .back-button,
+    .edit-profile-button {
+        height: 38px;
+
+        padding: 0 11px;
+
+        font-size: 12px;
+    }
+
+    .employee-profile-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 22px;
+
+        padding: 22px;
+    }
+
+    .employee-profile-id {
+        width: 100%;
+
+        align-items: flex-start;
+
+        padding-top: 15px;
+
+        border-top: 1px solid #f0f1f3;
+    }
+
+    .employee-profile-main {
+        width: 100%;
+    }
+
+    .employee-profile-avatar {
+        width: 64px;
+        height: 64px;
+
+        font-size: 20px;
+    }
+
+    .employee-profile-name h1 {
+        font-size: 20px;
+    }
+
+    .employee-info-card {
+        padding: 18px;
+    }
+
+    .employee-info-list > div {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 4px;
+
+        padding: 10px 0;
+    }
+
+    .employee-info-list strong {
+        max-width: 100%;
+
+        text-align: left;
+    }
+
+}

@@ -1,0 +1,1503 @@
+/* =========================================================
+   AdminAptitudeQuestionAssignment.css
+   Light theme • Blue accent buttons
+========================================================= */
+
+:root {
+  --apt-bg: #f5f7fb;
+  --apt-surface: #ffffff;
+  --apt-border: #e2e8f0;
+  --apt-border-light: #edf1f7;
+  --apt-text: #1e293b;
+  --apt-text-muted: #64748b;
+  --apt-text-faint: #94a3b8;
+
+  --apt-blue: #2563eb;
+  --apt-blue-dark: #1d4ed8;
+  --apt-blue-light: #eff6ff;
+  --apt-blue-border: #bfdbfe;
+
+  --apt-green: #16a34a;
+  --apt-green-light: #f0fdf4;
+  --apt-green-border: #bbf7d0;
+
+  --apt-red: #dc2626;
+  --apt-red-light: #fef2f2;
+  --apt-red-border: #fecaca;
+
+  --apt-amber: #d97706;
+  --apt-amber-light: #fffbeb;
+  --apt-amber-border: #fde68a;
+
+  --apt-purple: #7c3aed;
+  --apt-purple-light: #f5f3ff;
+  --apt-purple-border: #ddd6fe;
+
+  --apt-radius-sm: 6px;
+  --apt-radius-md: 10px;
+  --apt-radius-lg: 16px;
+  --apt-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --apt-shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --apt-shadow-lg: 0 20px 48px rgba(15, 23, 42, 0.18);
+}
+
+/* =========================================================
+   PAGE WRAPPER
+========================================================= */
+
+.admin-aptitude-page {
+  background: var(--apt-bg);
+  min-height: 100vh;
+  padding: 28px 32px 60px;
+  color: var(--apt-text);
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+}
+
+.admin-aptitude-page * {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.aptitude-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.aptitude-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--apt-blue);
+  background: var(--apt-blue-light);
+  border: 1px solid var(--apt-blue-border);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.aptitude-page-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--apt-text);
+}
+
+.aptitude-page-header p {
+  margin: 0;
+  max-width: 560px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--apt-text-muted);
+}
+
+.aptitude-refresh-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--apt-blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--apt-radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--apt-shadow-sm);
+  transition: background 0.15s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.aptitude-refresh-button:hover:not(:disabled) {
+  background: var(--apt-blue-dark);
+  transform: translateY(-1px);
+}
+
+.aptitude-refresh-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.aptitude-spin {
+  animation: aptitude-spin-anim 0.9s linear infinite;
+}
+
+@keyframes aptitude-spin-anim {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* =========================================================
+   ERROR BANNER
+========================================================= */
+
+.aptitude-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--apt-red-light);
+  border: 1px solid var(--apt-red-border);
+  color: var(--apt-red);
+  padding: 12px 16px;
+  border-radius: var(--apt-radius-md);
+  font-size: 13.5px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.aptitude-error svg {
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   SUMMARY CARDS
+========================================================= */
+
+.aptitude-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.aptitude-summary-card {
+  background: var(--apt-surface);
+  border: 1px solid var(--apt-border);
+  border-radius: var(--apt-radius-lg);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: var(--apt-shadow-sm);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.aptitude-summary-card:hover {
+  box-shadow: var(--apt-shadow-md);
+  transform: translateY(-2px);
+}
+
+.aptitude-summary-card span {
+  font-size: 13px;
+  color: var(--apt-text-muted);
+  font-weight: 500;
+}
+
+.aptitude-summary-card strong {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--apt-text);
+}
+
+.aptitude-summary-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--apt-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--apt-blue-light);
+  color: var(--apt-blue);
+}
+
+.aptitude-summary-icon.unassigned {
+  background: var(--apt-amber-light);
+  color: var(--apt-amber);
+}
+
+.aptitude-summary-icon.progress {
+  background: var(--apt-purple-light);
+  color: var(--apt-purple);
+}
+
+.aptitude-summary-icon.submitted {
+  background: #ecfeff;
+  color: #0891b2;
+}
+
+.aptitude-summary-icon.approved {
+  background: var(--apt-green-light);
+  color: var(--apt-green);
+}
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.aptitude-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.aptitude-search {
+  flex: 1;
+  min-width: 240px;
+  max-width: 420px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--apt-surface);
+  border: 1px solid var(--apt-border);
+  border-radius: var(--apt-radius-md);
+  padding: 9px 14px;
+  color: var(--apt-text-faint);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.aptitude-search:focus-within {
+  border-color: var(--apt-blue);
+  box-shadow: 0 0 0 3px var(--apt-blue-light);
+}
+
+.aptitude-search input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  color: var(--apt-text);
+  background: transparent;
+}
+
+.aptitude-search input::placeholder {
+  color: var(--apt-text-faint);
+}
+
+.aptitude-search button {
+  border: none;
+  background: transparent;
+  color: var(--apt-text-faint);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.aptitude-search button:hover {
+  color: var(--apt-text-muted);
+  background: var(--apt-border-light);
+}
+
+.aptitude-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.aptitude-filter > span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--apt-text-muted);
+}
+
+.aptitude-filter > div {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.aptitude-filter select {
+  appearance: none;
+  border: 1px solid var(--apt-border);
+  background: var(--apt-surface);
+  border-radius: var(--apt-radius-md);
+  padding: 9px 34px 9px 14px;
+  font-size: 14px;
+  color: var(--apt-text);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.aptitude-filter select:focus {
+  border-color: var(--apt-blue);
+  box-shadow: 0 0 0 3px var(--apt-blue-light);
+}
+
+.aptitude-filter svg {
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
+  color: var(--apt-text-faint);
+}
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.aptitude-table-card {
+  background: var(--apt-surface);
+  border: 1px solid var(--apt-border);
+  border-radius: var(--apt-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--apt-shadow-sm);
+}
+
+.aptitude-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--apt-border-light);
+}
+
+.aptitude-table-header h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 2px;
+  color: var(--apt-text);
+}
+
+.aptitude-table-header span {
+  font-size: 13px;
+  color: var(--apt-text-muted);
+}
+
+.aptitude-loading,
+.aptitude-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 64px 24px;
+  color: var(--apt-text-muted);
+  text-align: center;
+}
+
+.aptitude-loading svg {
+  color: var(--apt-blue);
+}
+
+.aptitude-empty > div {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--apt-blue-light);
+  color: var(--apt-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aptitude-empty h3 {
+  margin: 4px 0 0;
+  font-size: 15px;
+  color: var(--apt-text);
+}
+
+.aptitude-empty p {
+  margin: 0;
+  font-size: 13.5px;
+  max-width: 340px;
+}
+
+.aptitude-table-wrapper {
+  overflow-x: auto;
+}
+
+.aptitude-table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.aptitude-table-wrapper thead th {
+  text-align: left;
+  padding: 12px 18px;
+  background: #f8fafc;
+  color: var(--apt-text-muted);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-bottom: 1px solid var(--apt-border);
+  white-space: nowrap;
+}
+
+.aptitude-table-wrapper tbody tr {
+  border-bottom: 1px solid var(--apt-border-light);
+  transition: background 0.12s ease;
+}
+
+.aptitude-table-wrapper tbody tr:hover {
+  background: #f8fafc;
+}
+
+.aptitude-table-wrapper tbody tr:last-child {
+  border-bottom: none;
+}
+
+.aptitude-table-wrapper td {
+  padding: 14px 18px;
+  vertical-align: middle;
+  color: var(--apt-text);
+}
+
+/* Candidate cell */
+
+.aptitude-candidate-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.aptitude-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--apt-blue-light);
+  color: var(--apt-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid var(--apt-blue-border);
+}
+
+.aptitude-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aptitude-candidate-cell div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.aptitude-candidate-cell strong {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--apt-text);
+  white-space: nowrap;
+}
+
+.aptitude-candidate-cell span {
+  font-size: 12px;
+  color: var(--apt-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+/* Job cell */
+
+.aptitude-job-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aptitude-job-cell svg {
+  color: var(--apt-blue);
+  flex-shrink: 0;
+}
+
+.aptitude-job-cell div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.aptitude-job-cell strong {
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.aptitude-job-cell span {
+  font-size: 12px;
+  color: var(--apt-text-muted);
+}
+
+/* Contact cell */
+
+.aptitude-contact-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.aptitude-contact-cell span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--apt-text-muted);
+  white-space: nowrap;
+}
+
+.aptitude-contact-cell svg {
+  color: var(--apt-text-faint);
+  flex-shrink: 0;
+}
+
+/* HR cell */
+
+.aptitude-hr-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aptitude-hr-cell svg {
+  color: var(--apt-green);
+  flex-shrink: 0;
+}
+
+.aptitude-hr-cell div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.aptitude-hr-cell strong {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.aptitude-hr-cell span {
+  font-size: 11.5px;
+  color: var(--apt-text-faint);
+}
+
+/* Date cell */
+
+.aptitude-date-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--apt-text-muted);
+  white-space: nowrap;
+}
+
+.aptitude-date-cell svg {
+  color: var(--apt-text-faint);
+}
+
+/* Status cell */
+
+.aptitude-status-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.aptitude-status-cell small {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  color: var(--apt-text-muted);
+}
+
+.aptitude-status {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: capitalize;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.aptitude-status.unassigned {
+  background: #f1f5f9;
+  color: var(--apt-text-muted);
+  border-color: var(--apt-border);
+}
+
+.aptitude-status.assigned {
+  background: var(--apt-blue-light);
+  color: var(--apt-blue);
+  border-color: var(--apt-blue-border);
+}
+
+.aptitude-status.inprogress {
+  background: var(--apt-purple-light);
+  color: var(--apt-purple);
+  border-color: var(--apt-purple-border);
+}
+
+.aptitude-status.submitted {
+  background: #ecfeff;
+  color: #0891b2;
+  border-color: #a5f3fc;
+}
+
+.aptitude-status.rejected {
+  background: var(--apt-red-light);
+  color: var(--apt-red);
+  border-color: var(--apt-red-border);
+}
+
+.aptitude-status.approved {
+  background: var(--apt-green-light);
+  color: var(--apt-green);
+  border-color: var(--apt-green-border);
+}
+
+.aptitude-status.sentohr,
+.aptitude-status.sent-to-hr {
+  background: var(--apt-amber-light);
+  color: var(--apt-amber);
+  border-color: var(--apt-amber-border);
+}
+
+/* View button */
+
+.aptitude-view-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--apt-blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--apt-radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.aptitude-view-button:hover {
+  background: var(--apt-blue-dark);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.aptitude-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 20px;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.aptitude-modal {
+  background: var(--apt-surface);
+  border-radius: var(--apt-radius-lg);
+  width: 100%;
+  max-width: 760px;
+  box-shadow: var(--apt-shadow-lg);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 80px);
+  overflow: hidden;
+}
+
+.aptitude-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 26px;
+  border-bottom: 1px solid var(--apt-border-light);
+  background: #fbfcfe;
+}
+
+.aptitude-modal-header span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: var(--apt-blue);
+}
+
+.aptitude-modal-header h2 {
+  margin: 4px 0 2px;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--apt-text);
+}
+
+.aptitude-modal-header p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--apt-text-muted);
+}
+
+.aptitude-modal-header button {
+  border: none;
+  background: var(--apt-border-light);
+  color: var(--apt-text-muted);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.aptitude-modal-header button:hover {
+  background: var(--apt-red-light);
+  color: var(--apt-red);
+}
+
+.aptitude-modal-body {
+  padding: 22px 26px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.aptitude-modal-footer {
+  padding: 16px 26px;
+  border-top: 1px solid var(--apt-border-light);
+  display: flex;
+  justify-content: flex-end;
+  background: #fbfcfe;
+}
+
+.aptitude-close-button {
+  padding: 9px 20px;
+  background: var(--apt-surface);
+  border: 1px solid var(--apt-border);
+  color: var(--apt-text-muted);
+  border-radius: var(--apt-radius-md);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.aptitude-close-button:hover {
+  background: var(--apt-border-light);
+  border-color: var(--apt-text-faint);
+}
+
+/* =========================================================
+   DETAIL SECTIONS
+========================================================= */
+
+.aptitude-detail-section h3,
+.aptitude-assignment-section h3,
+.aptitude-review-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--apt-text);
+  margin: 0 0 12px;
+}
+
+.aptitude-detail-section h3 svg,
+.aptitude-assignment-section h3 svg,
+.aptitude-review-section h3 svg {
+  color: var(--apt-blue);
+}
+
+.aptitude-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--apt-border-light);
+  border-radius: var(--apt-radius-md);
+  padding: 16px;
+}
+
+.aptitude-detail-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.aptitude-detail-grid span {
+  font-size: 11.5px;
+  color: var(--apt-text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.aptitude-detail-grid strong {
+  font-size: 13.5px;
+  color: var(--apt-text);
+  font-weight: 600;
+}
+
+.aptitude-hr-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--apt-blue-light);
+  border: 1px solid var(--apt-blue-border);
+  border-radius: var(--apt-radius-md);
+  padding: 14px 16px;
+}
+
+.aptitude-hr-detail strong {
+  font-size: 14px;
+  color: var(--apt-text);
+}
+
+.aptitude-hr-detail span {
+  font-size: 12.5px;
+  color: var(--apt-text-muted);
+}
+
+/* =========================================================
+   QUESTION SOURCE SECTION
+========================================================= */
+
+.aptitude-section-title {
+  margin-bottom: 12px;
+}
+
+.aptitude-section-title p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--apt-text-muted);
+  line-height: 1.5;
+}
+
+.aptitude-question-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1px solid var(--apt-border-light);
+  border-radius: var(--apt-radius-md);
+  font-size: 13.5px;
+  color: var(--apt-text-muted);
+}
+
+.aptitude-question-loading svg {
+  color: var(--apt-blue);
+  flex-shrink: 0;
+}
+
+.aptitude-source-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+}
+
+.aptitude-source-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+  background: var(--apt-surface);
+  border: 1.5px solid var(--apt-border);
+  border-radius: var(--apt-radius-md);
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.aptitude-source-card:hover {
+  border-color: var(--apt-blue-border);
+  background: var(--apt-blue-light);
+}
+
+.aptitude-source-card.active {
+  border-color: var(--apt-blue);
+  background: var(--apt-blue-light);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.aptitude-source-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--apt-radius-sm);
+  background: var(--apt-blue-light);
+  color: var(--apt-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.aptitude-source-icon.existing {
+  background: var(--apt-purple-light);
+  color: var(--apt-purple);
+}
+
+.aptitude-source-card > div:nth-of-type(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.aptitude-source-card strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--apt-text);
+}
+
+.aptitude-source-card span {
+  font-size: 12.5px;
+  color: var(--apt-text-muted);
+  line-height: 1.4;
+}
+
+.aptitude-source-check {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: var(--apt-blue);
+}
+
+/* =========================================================
+   ASSIGNMENT FORM
+========================================================= */
+
+.aptitude-assignment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.aptitude-assignment-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--apt-text-muted);
+}
+
+.aptitude-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.aptitude-select-wrapper select {
+  width: 100%;
+  appearance: none;
+  border: 1px solid var(--apt-border);
+  background: var(--apt-surface);
+  border-radius: var(--apt-radius-md);
+  padding: 10px 34px 10px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--apt-text);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.aptitude-select-wrapper select:focus {
+  border-color: var(--apt-blue);
+  box-shadow: 0 0 0 3px var(--apt-blue-light);
+}
+
+.aptitude-select-wrapper select:disabled {
+  background: #f1f5f9;
+  cursor: not-allowed;
+  color: var(--apt-text-faint);
+}
+
+.aptitude-select-wrapper svg {
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
+  color: var(--apt-text-faint);
+}
+
+.aptitude-assignment-form input[type="number"] {
+  border: 1px solid var(--apt-border);
+  background: var(--apt-surface);
+  border-radius: var(--apt-radius-md);
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--apt-text);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.aptitude-assignment-form input[type="number"]:focus {
+  border-color: var(--apt-blue);
+  box-shadow: 0 0 0 3px var(--apt-blue-light);
+}
+
+.aptitude-assignment-form input[type="number"]:disabled {
+  background: #f1f5f9;
+  cursor: not-allowed;
+}
+
+.aptitude-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 20px;
+  background: var(--apt-blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--apt-radius-md);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--apt-shadow-sm);
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.aptitude-primary-button:hover:not(:disabled) {
+  background: var(--apt-blue-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--apt-shadow-md);
+}
+
+.aptitude-primary-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================================
+   REUSABLE QUESTION SETS
+========================================================= */
+
+.aptitude-reusable-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aptitude-reusable-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  background: var(--apt-surface);
+  border: 1.5px solid var(--apt-border);
+  border-radius: var(--apt-radius-md);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.aptitude-reusable-card:hover {
+  border-color: var(--apt-blue-border);
+  background: var(--apt-blue-light);
+}
+
+.aptitude-reusable-card.selected {
+  border-color: var(--apt-blue);
+  background: var(--apt-blue-light);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.aptitude-reusable-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--apt-radius-sm);
+  background: var(--apt-purple-light);
+  color: var(--apt-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.aptitude-reusable-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.aptitude-reusable-content strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--apt-text);
+}
+
+.aptitude-reusable-content span {
+  font-size: 12.5px;
+  color: var(--apt-text-muted);
+}
+
+.aptitude-reusable-content small {
+  font-size: 11.5px;
+  color: var(--apt-text-faint);
+}
+
+.aptitude-reusable-select {
+  flex-shrink: 0;
+  color: var(--apt-blue);
+  display: flex;
+  align-items: center;
+}
+
+.aptitude-radio-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--apt-border);
+}
+
+/* =========================================================
+   ASSIGNMENT SUMMARY (existing assignment view)
+========================================================= */
+
+.aptitude-assignment-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--apt-border-light);
+  border-radius: var(--apt-radius-md);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.aptitude-assignment-summary > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.aptitude-assignment-summary span {
+  font-size: 11.5px;
+  color: var(--apt-text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.aptitude-assignment-summary strong {
+  font-size: 14px;
+  color: var(--apt-text);
+  font-weight: 700;
+}
+
+.aptitude-assignment-source {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--apt-blue-light);
+  border: 1px solid var(--apt-blue-border);
+  color: var(--apt-blue-dark);
+  border-radius: var(--apt-radius-md);
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   QUESTIONS LIST
+========================================================= */
+
+.question-count-badge {
+  margin-left: auto;
+  background: var(--apt-blue-light);
+  color: var(--apt-blue);
+  border: 1px solid var(--apt-blue-border);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.aptitude-detail-section h3 {
+  display: flex;
+  align-items: center;
+}
+
+.aptitude-no-questions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  background: #f8fafc;
+  border: 1px dashed var(--apt-border);
+  border-radius: var(--apt-radius-md);
+  color: var(--apt-text-muted);
+  font-size: 13.5px;
+  justify-content: center;
+}
+
+.aptitude-question-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.aptitude-question-card {
+  display: flex;
+  gap: 14px;
+  background: var(--apt-surface);
+  border: 1px solid var(--apt-border);
+  border-radius: var(--apt-radius-md);
+  padding: 14px 16px;
+}
+
+.question-number {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--apt-blue-light);
+  color: var(--apt-blue);
+  font-size: 12.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.question-content > strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--apt-text);
+  line-height: 1.45;
+}
+
+.question-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.question-options span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--apt-text-muted);
+  padding: 7px 10px;
+  border-radius: var(--apt-radius-sm);
+  background: #f8fafc;
+  border: 1px solid var(--apt-border-light);
+}
+
+.question-options span.correct {
+  background: var(--apt-green-light);
+  border-color: var(--apt-green-border);
+  color: var(--apt-green);
+  font-weight: 600;
+}
+
+.question-options span.correct svg {
+  margin-left: auto;
+  color: var(--apt-green);
+}
+
+.question-content small {
+  font-size: 12px;
+  color: var(--apt-text-faint);
+  font-weight: 500;
+}
+
+/* =========================================================
+   ADMIN REVIEW SECTION
+========================================================= */
+
+.aptitude-review-section {
+  background: var(--apt-blue-light);
+  border: 1px solid var(--apt-blue-border);
+  border-radius: var(--apt-radius-lg);
+  padding: 18px 20px;
+}
+
+.aptitude-review-section p {
+  margin: 0 0 14px;
+  font-size: 13px;
+  color: var(--apt-text-muted);
+  line-height: 1.5;
+}
+
+.aptitude-review-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.aptitude-reject-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--apt-surface);
+  border: 1.5px solid var(--apt-red-border);
+  color: var(--apt-red);
+  border-radius: var(--apt-radius-md);
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.aptitude-reject-button:hover:not(:disabled) {
+  background: var(--apt-red-light);
+  transform: translateY(-1px);
+}
+
+.aptitude-reject-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.aptitude-approve-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--apt-blue);
+  border: none;
+  color: #fff;
+  border-radius: var(--apt-radius-md);
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--apt-shadow-sm);
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.aptitude-approve-button:hover:not(:disabled) {
+  background: var(--apt-blue-dark);
+  transform: translateY(-1px);
+}
+
+.aptitude-approve-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.aptitude-review-section textarea {
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
+  border: 1px solid var(--apt-border);
+  border-radius: var(--apt-radius-md);
+  padding: 12px 14px;
+  font-size: 13.5px;
+  font-family: inherit;
+  color: var(--apt-text);
+  outline: none;
+  background: var(--apt-surface);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.aptitude-review-section textarea:focus {
+  border-color: var(--apt-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.aptitude-review-section textarea:disabled {
+  background: #f1f5f9;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   SUCCESS BOX
+========================================================= */
+
+.aptitude-success-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--apt-green-light);
+  border: 1px solid var(--apt-green-border);
+  border-radius: var(--apt-radius-lg);
+  padding: 16px 18px;
+  color: var(--apt-green);
+}
+
+.aptitude-success-box > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.aptitude-success-box div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.aptitude-success-box strong {
+  font-size: 14px;
+  color: #15803d;
+}
+
+.aptitude-success-box span {
+  font-size: 13px;
+  color: #166534;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 720px) {
+  .admin-aptitude-page {
+    padding: 20px 16px 40px;
+  }
+
+  .aptitude-page-header {
+    flex-direction: column;
+  }
+
+  .aptitude-refresh-button {
+    align-self: flex-start;
+  }
+
+  .aptitude-modal-overlay {
+    padding: 16px;
+  }
+
+  .aptitude-modal-body,
+  .aptitude-modal-header,
+  .aptitude-modal-footer {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .aptitude-review-actions {
+    flex-direction: column;
+  }
+}

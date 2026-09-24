@@ -1,0 +1,213 @@
+.app-prompt-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 10001;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.56);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    animation: app-prompt-fade-in 160ms ease-out;
+}
+
+.app-prompt-modal {
+    width: min(100%, 520px);
+    overflow: hidden;
+    border: 1px solid #dbe3ef;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.24);
+    animation: app-prompt-slide-in 180ms ease-out;
+}
+
+.app-prompt-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 20px;
+    border-bottom: 1px solid #edf1f6;
+}
+
+.app-prompt-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    min-width: 0;
+}
+
+.app-prompt-icon {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    border-radius: 10px;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.app-prompt-header h2 {
+    margin: 1px 0 0;
+    color: #172033;
+    font-size: 16px;
+    line-height: 1.35;
+}
+
+.app-prompt-header p {
+    margin: 4px 0 0;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.app-prompt-close {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    border: 1px solid #dbe3ef;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #64748b;
+    cursor: pointer;
+}
+
+.app-prompt-close:hover {
+    background: #f1f5f9;
+    color: #172033;
+}
+
+.app-prompt-body {
+    padding: 20px;
+}
+
+.app-prompt-body label {
+    display: block;
+    margin-bottom: 7px;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.app-prompt-body input,
+.app-prompt-body textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 10px 12px;
+    border: 1px solid #dbe3ef;
+    border-radius: 8px;
+    outline: 0;
+    background: #ffffff;
+    color: #172033;
+    font-size: 13px;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+.app-prompt-body input {
+    height: 42px;
+}
+
+.app-prompt-body textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.app-prompt-body input:focus,
+.app-prompt-body textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.app-prompt-body input::placeholder,
+.app-prompt-body textarea::placeholder {
+    color: #94a3b8;
+}
+
+.app-prompt-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+    padding: 13px 20px;
+    border-top: 1px solid #edf1f6;
+    background: #f8fafc;
+}
+
+.app-prompt-cancel,
+.app-prompt-submit {
+    min-height: 38px;
+    padding: 0 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.app-prompt-cancel {
+    border: 1px solid #dbe3ef;
+    background: #ffffff;
+    color: #475569;
+}
+
+.app-prompt-cancel:hover {
+    background: #f1f5f9;
+}
+
+.app-prompt-submit {
+    border: 1px solid #2563eb;
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.app-prompt-submit:hover {
+    border-color: #1d4ed8;
+    background: #1d4ed8;
+}
+
+.app-prompt-close:focus-visible,
+.app-prompt-cancel:focus-visible,
+.app-prompt-submit:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.22);
+    outline-offset: 2px;
+}
+
+@keyframes app-prompt-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes app-prompt-slide-in {
+    from { transform: translateY(10px) scale(0.98); }
+    to { transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 520px) {
+    .app-prompt-backdrop {
+        align-items: end;
+        padding: 10px;
+    }
+
+    .app-prompt-modal {
+        border-radius: 14px 14px 10px 10px;
+    }
+
+    .app-prompt-footer {
+        flex-direction: column-reverse;
+    }
+
+    .app-prompt-cancel,
+    .app-prompt-submit {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .app-prompt-backdrop,
+    .app-prompt-modal {
+        animation: none;
+    }
+}

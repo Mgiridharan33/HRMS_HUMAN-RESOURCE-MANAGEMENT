@@ -1,0 +1,214 @@
+.employee-edit-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.employee-edit-back {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    border: none;
+    background: transparent;
+
+    color: #6b7280;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    margin-bottom: 18px;
+}
+
+.employee-edit-back:hover {
+    color: #2563eb;
+}
+
+.employee-edit-header {
+    margin-bottom: 20px;
+}
+
+.employee-edit-header h1 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 24px;
+}
+
+.employee-edit-header p {
+    margin-top: 6px;
+
+    color: #9ca3af;
+
+    font-size: 12px;
+}
+
+.employee-edit-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.employee-edit-card {
+    background: #fff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+.employee-edit-card-header {
+    padding: 18px 20px;
+
+    border-bottom: 1px solid #f0f1f3;
+}
+
+.employee-edit-card-header h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 14px;
+}
+
+.employee-edit-card-header p {
+    margin-top: 4px;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+}
+
+.employee-edit-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+
+    padding: 20px;
+}
+
+.employee-edit-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.employee-edit-field.full {
+    grid-column: 1 / -1;
+}
+
+.employee-edit-field label {
+    color: #374151;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.employee-edit-field input,
+.employee-edit-field select,
+.employee-edit-field textarea {
+    width: 100%;
+
+    padding: 10px 11px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #fff;
+
+    color: #111827;
+
+    font-size: 12px;
+
+    font-family: inherit;
+}
+
+.employee-edit-field input:focus,
+.employee-edit-field select:focus,
+.employee-edit-field textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.employee-edit-field textarea {
+    resize: vertical;
+}
+
+.employee-edit-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+}
+
+.employee-edit-actions button {
+    height: 40px;
+
+    padding: 0 18px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    background: #fff;
+
+    color: #374151;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.employee-edit-actions button.save {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    border-color: #2563eb;
+
+    background: #2563eb;
+
+    color: #fff;
+}
+
+.employee-edit-actions button.save:hover {
+    background: #1d4ed8;
+}
+
+.employee-edit-actions button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+.employee-edit-loading {
+    min-height: 400px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}

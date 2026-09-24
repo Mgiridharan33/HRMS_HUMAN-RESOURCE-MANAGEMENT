@@ -1,0 +1,51 @@
+/* =========================================================
+   EMPLOYEE LAYOUT
+========================================================= */
+
+.employee-layout {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    background: #f5f7fb;
+
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.employee-layout-content {
+
+    flex: 1;
+
+    min-width: 0;
+
+    min-height: 100vh;
+
+    padding: 28px;
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .employee-layout-content {
+
+        padding: 20px 16px;
+
+    }
+
+}

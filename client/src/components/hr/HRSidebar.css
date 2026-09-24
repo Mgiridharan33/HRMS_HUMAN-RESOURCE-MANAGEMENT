@@ -1,0 +1,792 @@
+/* =========================================================
+   HR SIDEBAR
+   LIGHT HRMS THEME
+   BLUE PRIMARY / ACTIVE THEME
+   ========================================================= */
+
+
+/* =========================================================
+   ROOT SIDEBAR
+   ========================================================= */
+
+.hr-sidebar {
+    --hr-sidebar-width: 258px;
+    --hr-sidebar-collapsed-width: 76px;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    z-index: 1000;
+
+    width: var(--hr-sidebar-width);
+
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-right: 1px solid #e5e7eb;
+
+    color: #1f2937;
+
+    box-shadow:
+        4px 0 18px rgba(15, 23, 42, 0.04);
+
+    transition:
+        width 0.28s ease,
+        box-shadow 0.28s ease;
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR
+   ========================================================= */
+
+.hr-sidebar.collapsed {
+    width: var(--hr-sidebar-collapsed-width);
+}
+
+
+/* =========================================================
+   LOGO AREA
+   ========================================================= */
+
+.hr-sidebar-logo {
+    height: 72px;
+
+    flex: 0 0 72px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 0 17px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid #eef0f3;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   LOGO ICON
+   ========================================================= */
+
+.hr-logo-icon {
+    width: 39px;
+    height: 39px;
+
+    flex: 0 0 39px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: -0.02em;
+
+    box-shadow:
+        0 4px 10px rgba(37, 99, 235, 0.22);
+}
+
+
+/* =========================================================
+   LOGO CONTENT
+   ========================================================= */
+
+.hr-logo-content {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.hr-logo-content strong {
+    color: #111827;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.02em;
+}
+
+.hr-logo-content span {
+    color: #94a3b8;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.04em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   COLLAPSE BUTTON
+   ========================================================= */
+
+.hr-sidebar-collapse {
+    position: absolute;
+
+    top: 57px;
+    right: -12px;
+
+    width: 25px;
+    height: 25px;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #dbe3ee;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #64748b;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 7px rgba(15, 23, 42, 0.10);
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.hr-sidebar-collapse:hover {
+    background: #eff6ff;
+
+    border-color: #bfdbfe;
+
+    color: #2563eb;
+
+    box-shadow:
+        0 4px 10px rgba(37, 99, 235, 0.15);
+
+    transform: scale(1.05);
+}
+
+.hr-sidebar-collapse:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   NAVIGATION CONTAINER
+   ========================================================= */
+
+.hr-sidebar-navigation {
+    flex: 1;
+
+    min-height: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    padding: 13px 10px 12px;
+
+    box-sizing: border-box;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        #dbe3ee
+        transparent;
+}
+
+
+/* =========================================================
+   WEBKIT SCROLLBAR
+   ========================================================= */
+
+.hr-sidebar-navigation::-webkit-scrollbar {
+    width: 5px;
+}
+
+.hr-sidebar-navigation::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.hr-sidebar-navigation::-webkit-scrollbar-thumb {
+    background: #dbe3ee;
+
+    border-radius: 10px;
+}
+
+.hr-sidebar-navigation::-webkit-scrollbar-thumb:hover {
+    background: #cbd5e1;
+}
+
+
+/* =========================================================
+   SIDEBAR SECTION
+   ========================================================= */
+
+.hr-sidebar-section {
+    margin-bottom: 17px;
+}
+
+.hr-sidebar-section:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.hr-sidebar-section-title {
+    padding: 0 10px;
+
+    margin-bottom: 7px;
+
+    color: #94a3b8;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    line-height: 20px;
+
+    letter-spacing: 0.09em;
+
+    text-transform: uppercase;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   NAVIGATION LINK
+   ========================================================= */
+
+.hr-sidebar-link {
+    width: 100%;
+    min-height: 43px;
+
+    position: relative;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 2px 0;
+
+    padding: 0 11px;
+
+    border: 1px solid transparent;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #64748b;
+
+    text-decoration: none;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.18s ease;
+}
+
+
+/* =========================================================
+   NAVIGATION ICON
+   ========================================================= */
+
+.hr-sidebar-link svg {
+    width: 19px;
+    height: 19px;
+
+    flex: 0 0 19px;
+
+    stroke-width: 1.9;
+
+    transition:
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+
+/* =========================================================
+   NAVIGATION TEXT
+   ========================================================= */
+
+.hr-sidebar-link span {
+    min-width: 0;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    line-height: 1;
+
+    transition:
+        opacity 0.18s ease;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.hr-sidebar-link:hover {
+    color: #2563eb;
+
+    background: #f5f8ff;
+
+    border-color: #e6efff;
+}
+
+.hr-sidebar-link:hover svg {
+    color: #2563eb;
+
+    transform: translateX(1px);
+}
+
+
+/* =========================================================
+   ACTIVE LINK
+   ========================================================= */
+
+.hr-sidebar-link.active {
+    color: #2563eb;
+
+    background: #eff6ff;
+
+    border-color: #dbeafe;
+
+    font-weight: 650;
+
+    box-shadow:
+        0 2px 6px rgba(37, 99, 235, 0.06);
+}
+
+
+/* =========================================================
+   ACTIVE LEFT INDICATOR
+   ========================================================= */
+
+.hr-sidebar-link.active::before {
+    content: "";
+
+    position: absolute;
+
+    left: -10px;
+
+    top: 7px;
+    bottom: 7px;
+
+    width: 3px;
+
+    border-radius: 0 4px 4px 0;
+
+    background: #2563eb;
+}
+
+
+/*
+   Because the link normally sits inside the navigation
+   container, slightly reposition the active indicator.
+*/
+
+.hr-sidebar-navigation .hr-sidebar-link.active::before {
+    left: -10px;
+}
+
+
+/* =========================================================
+   ACTIVE ICON
+   ========================================================= */
+
+.hr-sidebar-link.active svg {
+    color: #2563eb;
+
+    stroke-width: 2.15;
+}
+
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+   ========================================================= */
+
+.hr-sidebar-link:focus-visible {
+    outline: 2px solid #93c5fd;
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   COLLAPSED NAVIGATION
+   ========================================================= */
+
+.hr-sidebar.collapsed .hr-sidebar-navigation {
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+.hr-sidebar.collapsed .hr-sidebar-link {
+    justify-content: center;
+
+    width: 100%;
+
+    padding: 0;
+
+    gap: 0;
+}
+
+.hr-sidebar.collapsed .hr-sidebar-link span {
+    display: none;
+}
+
+.hr-sidebar.collapsed .hr-sidebar-link svg {
+    width: 19px;
+    height: 19px;
+}
+
+
+/* =========================================================
+   COLLAPSED ACTIVE INDICATOR
+   ========================================================= */
+
+.hr-sidebar.collapsed .hr-sidebar-link.active::before {
+    left: -9px;
+
+    top: 9px;
+    bottom: 9px;
+}
+
+
+/* =========================================================
+   COLLAPSED LOGO
+   ========================================================= */
+
+.hr-sidebar.collapsed .hr-sidebar-logo {
+    justify-content: center;
+
+    padding: 0;
+}
+
+.hr-sidebar.collapsed .hr-logo-icon {
+    width: 39px;
+    height: 39px;
+}
+
+
+/* =========================================================
+   BOTTOM AREA
+   ========================================================= */
+
+.hr-sidebar-bottom {
+    flex: 0 0 auto;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eef0f3;
+}
+
+
+/* =========================================================
+   BOTTOM LINKS
+   ========================================================= */
+
+.hr-sidebar-bottom .hr-sidebar-link {
+    margin: 2px 0;
+}
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+.hr-sidebar-link.logout {
+    appearance: none;
+
+    text-align: left;
+}
+
+.hr-sidebar-link.logout:hover {
+    color: #dc2626;
+
+    background: #fef2f2;
+
+    border-color: #fee2e2;
+}
+
+.hr-sidebar-link.logout:hover svg {
+    color: #dc2626;
+}
+
+.hr-sidebar-link.logout:focus-visible {
+    outline-color: #fca5a5;
+}
+
+
+/* =========================================================
+   COLLAPSED BOTTOM
+   ========================================================= */
+
+.hr-sidebar.collapsed .hr-sidebar-bottom {
+    padding: 9px;
+}
+
+.hr-sidebar.collapsed .hr-sidebar-bottom .hr-sidebar-link {
+    justify-content: center;
+
+    padding: 0;
+}
+
+.hr-sidebar.collapsed .hr-sidebar-bottom .hr-sidebar-link span {
+    display: none;
+}
+
+
+/* =========================================================
+   COLLAPSED LOGOUT ACTIVE/HOVER
+   ========================================================= */
+
+.hr-sidebar.collapsed .hr-sidebar-link.logout:hover {
+    background: #fef2f2;
+}
+
+
+/* =========================================================
+   SIDEBAR TOOLTIP
+   =========================================================
+   Uses the title attribute from your JSX naturally.
+   ========================================================= */
+
+.hr-sidebar.collapsed .hr-sidebar-link {
+    position: relative;
+}
+
+
+/* =========================================================
+   SMOOTH SIDEBAR TRANSITIONS
+   ========================================================= */
+
+.hr-sidebar.collapsed .hr-sidebar-section-title {
+    display: none;
+}
+
+.hr-sidebar.collapsed .hr-sidebar-section {
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   DESKTOP CONTENT HELPER
+   =========================================================
+   Add this class to your HR main layout/content wrapper if
+   you want automatic positioning beside the sidebar.
+   ========================================================= */
+
+.hr-main-content {
+    margin-left: 258px;
+
+    min-height: 100vh;
+
+    transition:
+        margin-left 0.28s ease;
+}
+
+
+/* =========================================================
+   COLLAPSED MAIN CONTENT
+   ========================================================= */
+
+.hr-sidebar.collapsed ~ .hr-main-content {
+    margin-left: 76px;
+}
+
+
+/* =========================================================
+   OPTIONAL HR LAYOUT SUPPORT
+   ========================================================= */
+
+.hr-layout {
+    min-height: 100vh;
+
+    background: #f5f7fb;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .hr-sidebar {
+        width: 235px;
+    }
+
+    .hr-sidebar.collapsed {
+        width: 70px;
+    }
+
+    .hr-main-content {
+        margin-left: 235px;
+    }
+
+    .hr-sidebar.collapsed ~ .hr-main-content {
+        margin-left: 70px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .hr-sidebar {
+        width: 76px;
+
+        box-shadow:
+            3px 0 16px rgba(15, 23, 42, 0.08);
+    }
+
+    .hr-sidebar:not(.collapsed) {
+        width: 258px;
+
+        box-shadow:
+            8px 0 25px rgba(15, 23, 42, 0.13);
+    }
+
+    .hr-sidebar.collapsed {
+        width: 76px;
+    }
+
+    .hr-sidebar-logo {
+        padding: 0 18px;
+    }
+
+    .hr-sidebar:not(.collapsed) .hr-sidebar-logo {
+        padding: 0 17px;
+    }
+
+    .hr-main-content {
+        margin-left: 76px;
+    }
+
+    .hr-sidebar:not(.collapsed) ~ .hr-main-content {
+        margin-left: 76px;
+    }
+
+    .hr-sidebar.collapsed ~ .hr-main-content {
+        margin-left: 76px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .hr-sidebar {
+        width: 68px;
+    }
+
+    .hr-sidebar.collapsed {
+        width: 68px;
+    }
+
+    .hr-sidebar:not(.collapsed) {
+        width: 250px;
+    }
+
+    .hr-main-content {
+        margin-left: 68px;
+    }
+
+    .hr-sidebar.collapsed ~ .hr-main-content {
+        margin-left: 68px;
+    }
+
+    .hr-sidebar:not(.collapsed) ~ .hr-main-content {
+        margin-left: 68px;
+    }
+
+    .hr-sidebar-collapse {
+        right: -11px;
+
+        width: 23px;
+        height: 23px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hr-sidebar,
+    .hr-sidebar-link,
+    .hr-sidebar-link svg,
+    .hr-sidebar-collapse,
+    .hr-main-content {
+        transition: none;
+    }
+}

@@ -1,0 +1,398 @@
+/* =========================================================
+   EMPLOYEE SIDEBAR
+========================================================= */
+
+.employee-sidebar {
+
+    position: sticky;
+
+    top: 0;
+
+    left: 0;
+
+    width: 250px;
+
+    height: 100vh;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: #ffffff;
+
+    border-right: 1px solid #e8e8e8;
+
+    transition:
+        width 0.25s ease;
+
+    z-index: 100;
+
+}
+
+
+.employee-sidebar.collapsed {
+
+    width: 76px;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.employee-sidebar-logo {
+
+    height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 16px;
+
+    border-bottom: 1px solid #eeeeee;
+
+}
+
+
+.employee-logo-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+}
+
+
+.employee-logo-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+}
+
+
+.employee-logo-content strong {
+
+    font-size: 17px;
+
+    line-height: 20px;
+
+    color: #111827;
+
+}
+
+
+.employee-logo-content span {
+
+    margin-top: 2px;
+
+    color: #8a8a8a;
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   COLLAPSE BUTTON
+========================================================= */
+
+.employee-sidebar-collapse {
+
+    position: absolute;
+
+    top: 58px;
+
+    right: -13px;
+
+    width: 27px;
+
+    height: 27px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #e4e4e4;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #555555;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 7px rgba(0, 0, 0, 0.08);
+
+    z-index: 10;
+
+}
+
+
+.employee-sidebar-collapse:hover {
+
+    background: #f5f7fa;
+
+    color: #2563eb;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.employee-sidebar-navigation {
+
+    flex: 1;
+
+    padding: 18px 10px;
+
+    overflow-y: auto;
+
+}
+
+
+.employee-sidebar-section {
+
+    margin-bottom: 22px;
+
+}
+
+
+.employee-sidebar-section-title {
+
+    padding: 0 12px;
+
+    margin-bottom: 7px;
+
+    color: #999999;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.employee-sidebar-link {
+
+    width: 100%;
+
+    min-height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px 12px;
+
+    margin-bottom: 3px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: #656565;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+
+}
+
+
+.employee-sidebar-link:hover {
+
+    background: #f3f6fb;
+
+    color: #2563eb;
+
+}
+
+
+.employee-sidebar-link.active {
+
+    background: #eaf1ff;
+
+    color: #2563eb;
+
+    font-weight: 600;
+
+}
+
+
+.employee-sidebar-link svg {
+
+    flex-shrink: 0;
+
+}
+
+
+/* =========================================================
+   COLLAPSED LINKS
+========================================================= */
+
+.employee-sidebar.collapsed
+.employee-sidebar-link {
+
+    justify-content: center;
+
+    padding: 10px;
+
+}
+
+
+.employee-sidebar.collapsed
+.employee-sidebar-section {
+
+    margin-bottom: 12px;
+
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.employee-sidebar-bottom {
+
+    padding: 12px 10px;
+
+    border-top: 1px solid #eeeeee;
+
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.employee-sidebar-link.logout {
+
+    color: #dc2626;
+
+}
+
+
+.employee-sidebar-link.logout:hover {
+
+    background: #fff1f1;
+
+    color: #dc2626;
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.employee-sidebar-navigation::-webkit-scrollbar {
+
+    width: 4px;
+
+}
+
+
+.employee-sidebar-navigation::-webkit-scrollbar-thumb {
+
+    background: #dddddd;
+
+    border-radius: 20px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .employee-sidebar {
+
+        width: 76px;
+
+    }
+
+
+    .employee-sidebar
+    .employee-logo-content,
+    .employee-sidebar-section-title,
+    .employee-sidebar-link span {
+
+        display: none;
+
+    }
+
+
+    .employee-sidebar-logo {
+
+        justify-content: center;
+
+        padding: 16px 10px;
+
+    }
+
+
+    .employee-sidebar-link {
+
+        justify-content: center;
+
+        padding: 10px;
+
+    }
+
+}
