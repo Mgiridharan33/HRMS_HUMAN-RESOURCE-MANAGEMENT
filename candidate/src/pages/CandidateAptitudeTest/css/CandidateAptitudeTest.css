@@ -1,0 +1,1245 @@
+/* =========================================================
+   CANDIDATE APTITUDE TEST
+   ========================================================= */
+
+.candidate-aptitude-page {
+    min-height: 100%;
+    width: 100%;
+    background: #f5f7fb;
+    color: #172033;
+    padding: 28px;
+    box-sizing: border-box;
+}
+
+.candidate-aptitude-container {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.candidate-aptitude-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.page-eyebrow,
+.result-eyebrow {
+    display: block;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+.candidate-aptitude-heading h1 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1.15;
+    font-weight: 800;
+    color: #111827;
+}
+
+.candidate-aptitude-heading p {
+    margin: 9px 0 0;
+    color: #667085;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.aptitude-primary-button,
+.aptitude-secondary-button,
+.aptitude-submit-button,
+.aptitude-outline-button,
+.aptitude-refresh-button,
+.aptitude-back-button,
+.aptitude-disabled-button {
+    border: 0;
+    border-radius: 9px;
+    min-height: 42px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.aptitude-primary-button {
+    background: #2563eb;
+    color: #fff;
+}
+
+.aptitude-primary-button:hover:not(:disabled) {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.aptitude-submit-button {
+    background: #dc2626;
+    color: #fff;
+}
+
+.aptitude-submit-button:hover:not(:disabled) {
+    background: #b91c1c;
+    transform: translateY(-1px);
+}
+
+.aptitude-secondary-button {
+    background: #fff;
+    border: 1px solid #d9dee8;
+    color: #344054;
+}
+
+.aptitude-secondary-button:hover:not(:disabled) {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.aptitude-outline-button {
+    background: #fff;
+    color: #2563eb;
+    border: 1px solid #b9cdfb;
+}
+
+.aptitude-outline-button:hover:not(:disabled) {
+    background: #eff6ff;
+}
+
+.aptitude-refresh-button {
+    background: #fff;
+    color: #344054;
+    border: 1px solid #d9dee8;
+}
+
+.aptitude-refresh-button:hover:not(:disabled) {
+    background: #f8fafc;
+}
+
+.aptitude-back-button {
+    background: transparent;
+    color: #667085;
+    padding: 0;
+    min-height: auto;
+    margin-bottom: 12px;
+}
+
+.aptitude-back-button:hover:not(:disabled) {
+    color: #2563eb;
+}
+
+.aptitude-disabled-button {
+    background: #e5e7eb;
+    color: #98a2b3;
+    cursor: not-allowed;
+}
+
+button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.aptitude-error {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff1f2;
+    color: #be123c;
+    border: 1px solid #fecdd3;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.aptitude-error span {
+    flex: 1;
+}
+
+.aptitude-error button {
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   NOTICE
+   ========================================================= */
+
+.candidate-assessment-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 28px;
+}
+
+.notice-icon {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.candidate-assessment-notice strong {
+    display: block;
+    color: #1e3a8a;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.candidate-assessment-notice p {
+    margin: 0;
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.aptitude-section {
+    margin-top: 26px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #172033;
+}
+
+.section-heading span {
+    display: block;
+    margin-top: 4px;
+    color: #98a2b3;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TEST CARDS
+   ========================================================= */
+
+.aptitude-test-cards {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(280px, 1fr)
+    );
+    gap: 16px;
+}
+
+.aptitude-test-card {
+    background: #fff;
+    border: 1px solid #e4e7ec;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(
+        16,
+        24,
+        40,
+        0.04
+    );
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+}
+
+.aptitude-test-card:hover {
+    transform: translateY(-2px);
+    border-color: #cbd5e1;
+    box-shadow: 0 8px 24px rgba(
+        16,
+        24,
+        40,
+        0.07
+    );
+}
+
+.test-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.test-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.test-status {
+    border-radius: 999px;
+    padding: 5px 9px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.test-status.pending {
+    color: #92400e;
+    background: #fffbeb;
+}
+
+.test-status.in-progress {
+    color: #1d4ed8;
+    background: #eff6ff;
+}
+
+.test-status.expired {
+    color: #b91c1c;
+    background: #fef2f2;
+}
+
+.aptitude-test-card h3 {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.4;
+    color: #111827;
+}
+
+.test-candidate-name {
+    margin: 5px 0 18px;
+    color: #667085;
+    font-size: 12px;
+}
+
+.test-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 18px;
+}
+
+.test-meta div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #667085;
+    font-size: 12px;
+}
+
+.test-card-footer {
+    padding-top: 15px;
+    border-top: 1px solid #eef0f3;
+}
+
+.test-card-footer button {
+    width: 100%;
+}
+
+
+/* =========================================================
+   EMPTY
+   ========================================================= */
+
+.aptitude-empty-list,
+.aptitude-empty-card,
+.aptitude-loading-card {
+    background: #fff;
+    border: 1px solid #e4e7ec;
+    border-radius: 14px;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.empty-icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f2f4f7;
+    color: #667085;
+}
+
+.aptitude-empty-list h3,
+.aptitude-empty-card h3,
+.aptitude-loading-card h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #344054;
+}
+
+.aptitude-empty-list p,
+.aptitude-loading-card p {
+    margin: 7px 0 0;
+    color: #98a2b3;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   COMPLETED TESTS
+   ========================================================= */
+
+.completed-section {
+    margin-top: 35px;
+}
+
+.aptitude-completed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.completed-test-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #fff;
+    border: 1px solid #e4e7ec;
+    border-radius: 12px;
+    padding: 14px 16px;
+}
+
+.completed-test-info {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.completed-icon {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    border-radius: 9px;
+    background: #ecfdf3;
+    color: #16a34a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.completed-test-info h3 {
+    margin: 0;
+    font-size: 14px;
+    color: #344054;
+}
+
+.completed-test-info p {
+    margin: 4px 0 0;
+    color: #98a2b3;
+    font-size: 11px;
+}
+
+.completed-score {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.completed-score strong {
+    color: #2563eb;
+    font-size: 17px;
+}
+
+.completed-score span {
+    color: #98a2b3;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   TEST SCREEN
+   ========================================================= */
+
+.aptitude-test-wrapper {
+    width: min(
+        1250px,
+        100%
+    );
+    margin: 0 auto;
+}
+
+.aptitude-test-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.aptitude-test-header h1 {
+    margin: 0;
+    font-size: 25px;
+    color: #111827;
+}
+
+.aptitude-test-header p {
+    margin: 5px 0 0;
+    color: #667085;
+    font-size: 13px;
+}
+
+.aptitude-timer {
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid #bfdbfe;
+    color: #2563eb;
+    border-radius: 12px;
+    padding: 10px 15px;
+}
+
+.aptitude-timer.warning {
+    border-color: #fde68a;
+    color: #b45309;
+    background: #fffbeb;
+}
+
+.aptitude-timer.danger {
+    border-color: #fecaca;
+    color: #dc2626;
+    background: #fef2f2;
+}
+
+.aptitude-timer div {
+    display: flex;
+    flex-direction: column;
+}
+
+.aptitude-timer span {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.aptitude-timer strong {
+    font-size: 20px;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================================================
+   AUTO SUBMIT
+   ========================================================= */
+
+.aptitude-auto-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    background: #fff7ed;
+    color: #c2410c;
+    border: 1px solid #fed7aa;
+    border-radius: 10px;
+    padding: 11px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TEST LAYOUT
+   ========================================================= */
+
+.aptitude-test-layout {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+}
+
+.aptitude-question-sidebar {
+    position: sticky;
+    top: 20px;
+    background: #fff;
+    border: 1px solid #e4e7ec;
+    border-radius: 14px;
+    padding: 17px;
+}
+
+.sidebar-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eef0f3;
+}
+
+.sidebar-summary div {
+    text-align: center;
+}
+
+.sidebar-summary span {
+    display: block;
+    color: #98a2b3;
+    font-size: 9px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.sidebar-summary strong {
+    display: block;
+    color: #344054;
+    margin-top: 4px;
+    font-size: 16px;
+}
+
+.question-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 7px;
+    padding: 17px 0;
+}
+
+.question-number {
+    width: 100%;
+    aspect-ratio: 1;
+    border: 1px solid #d9dee8;
+    border-radius: 7px;
+    background: #fff;
+    color: #667085;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.question-number:hover {
+    border-color: #93c5fd;
+}
+
+.question-number.active {
+    border-color: #2563eb;
+    background: #2563eb;
+    color: #fff;
+}
+
+.question-number.answered {
+    background: #ecfdf3;
+    color: #15803d;
+    border-color: #bbf7d0;
+}
+
+.question-number.active.answered {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+}
+
+.question-legend {
+    border-top: 1px solid #eef0f3;
+    padding-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.question-legend div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #667085;
+    font-size: 10px;
+}
+
+.legend-box {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    background: #fff;
+    border: 1px solid #d9dee8;
+}
+
+.legend-box.current {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.legend-box.answered {
+    background: #ecfdf3;
+    border-color: #bbf7d0;
+}
+
+
+/* =========================================================
+   QUESTION AREA
+   ========================================================= */
+
+.aptitude-question-area {
+    min-width: 0;
+}
+
+.question-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #667085;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.question-progress strong {
+    color: #344054;
+}
+
+.question-progress-track {
+    width: 100%;
+    height: 5px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.question-progress-track div {
+    height: 100%;
+    background: #2563eb;
+    border-radius: inherit;
+    transition: width 0.2s ease;
+}
+
+.aptitude-question-card {
+    background: #fff;
+    border: 1px solid #e4e7ec;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.question-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 19px;
+}
+
+.question-label {
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.question-marks {
+    background: #f2f4f7;
+    color: #667085;
+    border-radius: 999px;
+    padding: 5px 9px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.aptitude-question-card h2 {
+    margin: 0 0 25px;
+    color: #172033;
+    font-size: 20px;
+    line-height: 1.55;
+    font-weight: 700;
+}
+
+.aptitude-options {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.aptitude-option {
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    text-align: left;
+    border: 1px solid #dfe3e8;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+    color: #344054;
+    transition:
+        border-color 0.18s ease,
+        background 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.aptitude-option:hover:not(:disabled) {
+    border-color: #93c5fd;
+    background: #f8fbff;
+}
+
+.aptitude-option.selected {
+    border-color: #2563eb;
+    background: #eff6ff;
+    box-shadow: 0 0 0 2px rgba(
+        37,
+        99,
+        235,
+        0.08
+    );
+}
+
+.option-letter {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f2f4f7;
+    color: #667085;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.aptitude-option.selected .option-letter {
+    background: #2563eb;
+    color: #fff;
+}
+
+.option-text {
+    flex: 1;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.option-check {
+    color: #2563eb;
+    flex: 0 0 auto;
+}
+
+.question-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-top: 1px solid #eef0f3;
+    margin-top: 25px;
+    padding-top: 17px;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.aptitude-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(
+        15,
+        23,
+        42,
+        0.45
+    );
+}
+
+.aptitude-confirm-modal {
+    width: min(
+        450px,
+        100%
+    );
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 25px 60px rgba(
+        15,
+        23,
+        42,
+        0.22
+    );
+}
+
+.modal-icon {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: #eff6ff;
+    color: #2563eb;
+    margin-bottom: 16px;
+}
+
+.aptitude-confirm-modal h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #172033;
+}
+
+.aptitude-confirm-modal > p {
+    color: #667085;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 8px 0 15px;
+}
+
+.modal-warning {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    color: #92400e;
+    padding: 11px;
+    border-radius: 9px;
+    font-size: 12px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+
+/* =========================================================
+   RESULT
+   ========================================================= */
+
+.aptitude-result-page {
+    width: min(
+        760px,
+        100%
+    );
+    margin: 40px auto;
+    text-align: center;
+}
+
+.result-success-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ecfdf3;
+    color: #16a34a;
+}
+
+.aptitude-result-page h1 {
+    margin: 0;
+    color: #172033;
+    font-size: 28px;
+}
+
+.aptitude-result-page > p {
+    margin: 8px 0 25px;
+    color: #667085;
+    font-size: 14px;
+}
+
+.result-score-card {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 20px;
+    text-align: left;
+    background: #fff;
+    border: 1px solid #e4e7ec;
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.result-score-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 170px;
+    border-radius: 14px;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.result-score-circle strong {
+    font-size: 38px;
+    line-height: 1.1;
+    margin-top: 6px;
+}
+
+.result-score-circle span {
+    font-size: 11px;
+    margin-top: 4px;
+    color: #667085;
+}
+
+.result-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.result-stat-grid > div {
+    border: 1px solid #eef0f3;
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.result-stat-grid svg {
+    color: #2563eb;
+    margin-bottom: 8px;
+}
+
+.result-stat-grid span {
+    color: #98a2b3;
+    font-size: 10px;
+}
+
+.result-stat-grid strong {
+    color: #344054;
+    margin-top: 3px;
+    font-size: 18px;
+}
+
+.result-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: left;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    border-radius: 10px;
+    padding: 13px;
+    margin: 15px 0;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.result-notice svg {
+    flex: 0 0 auto;
+    color: #2563eb;
+}
+
+.result-back-button {
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   LOADER
+   ========================================================= */
+
+.spin {
+    animation: aptitude-spin 0.9s linear infinite;
+}
+
+@keyframes aptitude-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (
+    max-width: 900px
+) {
+
+    .candidate-aptitude-page {
+        padding: 20px;
+    }
+
+    .aptitude-test-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .aptitude-question-sidebar {
+        position: static;
+        order: 2;
+    }
+
+    .question-grid {
+        grid-template-columns: repeat(
+            10,
+            1fr
+        );
+    }
+
+    .aptitude-question-area {
+        order: 1;
+    }
+
+}
+
+
+@media (
+    max-width: 700px
+) {
+
+    .candidate-aptitude-heading,
+    .aptitude-test-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .candidate-aptitude-heading h1 {
+        font-size: 25px;
+    }
+
+    .aptitude-refresh-button {
+        width: 100%;
+    }
+
+    .aptitude-timer {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .aptitude-question-card {
+        padding: 18px;
+    }
+
+    .aptitude-question-card h2 {
+        font-size: 17px;
+    }
+
+    .question-navigation {
+        flex-wrap: wrap;
+    }
+
+    .question-navigation button {
+        flex: 1;
+    }
+
+    .completed-test-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .completed-score {
+        align-items: flex-start;
+    }
+
+    .completed-test-row .aptitude-outline-button {
+        width: 100%;
+    }
+
+    .result-score-card {
+        grid-template-columns: 1fr;
+    }
+
+    .result-score-circle {
+        min-height: 145px;
+    }
+
+}
+
+
+@media (
+    max-width: 480px
+) {
+
+    .candidate-aptitude-page {
+        padding: 14px;
+    }
+
+    .question-grid {
+        grid-template-columns: repeat(
+            6,
+            1fr
+        );
+    }
+
+    .aptitude-question-sidebar {
+        padding: 12px;
+    }
+
+    .aptitude-question-card {
+        padding: 15px;
+    }
+
+    .question-navigation {
+        flex-direction: column;
+    }
+
+    .question-navigation button {
+        width: 100%;
+        flex: none;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .modal-actions button {
+        width: 100%;
+    }
+
+    .result-stat-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}

@@ -1,0 +1,1237 @@
+/* =========================================================
+   CANDIDATE PROFILE
+   Complete Responsive Light Theme
+========================================================= */
+
+.candidate-profile {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 32px 36px 60px;
+
+    background: #f7f9fc;
+    color: #172033;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.candidate-profile-header {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 0 auto 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.candidate-profile-header h1 {
+    margin: 0;
+
+    font-size: 30px;
+    line-height: 1.25;
+
+    font-weight: 700;
+    letter-spacing: -0.5px;
+
+    color: #172033;
+}
+
+.candidate-profile-header p {
+    margin: 7px 0 0;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    color: #718096;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.profile-success {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 0 auto 20px;
+
+    padding: 13px 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #b7ebd0;
+    border-radius: 10px;
+
+    background: #f0fdf6;
+    color: #16804b;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.profile-success svg {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.profile-error {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 0 auto 20px;
+
+    padding: 13px 16px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+
+    background: #fff5f5;
+    color: #c53030;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.candidate-profile form {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   PROFILE SECTION
+========================================================= */
+
+.profile-section {
+    width: 100%;
+
+    margin-bottom: 22px;
+    padding: 26px 28px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid #e5eaf1;
+    border-radius: 14px;
+
+    box-shadow:
+        0 2px 6px rgba(15, 23, 42, 0.03),
+        0 8px 24px rgba(15, 23, 42, 0.025);
+}
+
+.profile-section:last-of-type {
+    margin-bottom: 0;
+}
+
+.profile-section h2 {
+    margin: 0 0 22px;
+
+    font-size: 18px;
+    line-height: 1.4;
+
+    font-weight: 700;
+
+    color: #1a2333;
+}
+
+
+/* =========================================================
+   SECTION TITLE ROW
+========================================================= */
+
+.section-title-row {
+    margin-bottom: 22px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.section-title-row h2 {
+    margin: 0 0 5px;
+}
+
+.section-title-row p {
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: #7a8699;
+}
+
+.section-title-row > svg {
+    flex-shrink: 0;
+
+    margin-top: 2px;
+
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   PROFILE PHOTO
+========================================================= */
+
+.profile-photo-area {
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+
+    min-height: 110px;
+}
+
+
+/* =========================================================
+   PROFILE AVATAR
+========================================================= */
+
+.profile-avatar {
+    width: 96px;
+    height: 96px;
+
+    flex: 0 0 96px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border: 1px solid #dce3ec;
+    border-radius: 50%;
+
+    background: #f1f5f9;
+
+    color: #64748b;
+
+    box-shadow:
+        0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   PHOTO ACTION AREA
+========================================================= */
+
+.profile-photo-area > div:last-of-type {
+    min-width: 0;
+}
+
+.profile-photo-area button {
+    min-height: 40px;
+
+    padding: 9px 15px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border: 1px solid #2563eb;
+    border-radius: 8px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.profile-photo-area button:hover:not(:disabled) {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+
+    box-shadow:
+        0 4px 12px rgba(37, 99, 235, 0.2);
+
+    transform: translateY(-1px);
+}
+
+.profile-photo-area button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   SELECTED IMAGE FILE
+========================================================= */
+
+.selected-file {
+    max-width: 360px;
+
+    margin-top: 10px;
+
+    padding: 8px 10px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    border: 1px solid #dbe4f0;
+    border-radius: 8px;
+
+    background: #f8fafc;
+}
+
+.selected-file span {
+    min-width: 0;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    color: #475569;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* Important:
+   Override generic photo button styles
+   for the X/remove button.
+*/
+
+.selected-file button {
+    width: 26px;
+    height: 26px;
+
+    min-height: 26px;
+
+    flex: 0 0 26px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 6px;
+
+    background: transparent;
+    color: #64748b;
+
+    box-shadow: none;
+
+    transform: none;
+}
+
+.selected-file button:hover:not(:disabled) {
+    background: #fee2e2;
+    color: #dc2626;
+
+    box-shadow: none;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.profile-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px 22px;
+}
+
+
+/* =========================================================
+   FORM FIELD
+========================================================= */
+
+.profile-grid > div,
+.profile-professional > div {
+    min-width: 0;
+}
+
+.profile-grid label,
+.profile-professional label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #344054;
+
+    font-size: 13px;
+    line-height: 1.4;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.profile-grid input,
+.profile-professional textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d8e0ea;
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: #172033;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* INPUT */
+
+.profile-grid input {
+    height: 44px;
+
+    padding: 0 13px;
+}
+
+
+/* TEXTAREA */
+
+.profile-professional textarea {
+    min-height: 105px;
+
+    padding: 12px 13px;
+
+    resize: vertical;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.profile-grid input::placeholder,
+.profile-professional textarea::placeholder {
+    color: #a0aec0;
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
+
+.profile-grid input:focus,
+.profile-professional textarea:focus {
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.1);
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   INPUT HOVER
+========================================================= */
+
+.profile-grid input:hover:not(:disabled),
+.profile-professional textarea:hover:not(:disabled) {
+    border-color: #b9c5d4;
+}
+
+
+/* =========================================================
+   DISABLED INPUTS
+========================================================= */
+
+.profile-grid input:disabled,
+.profile-professional textarea:disabled {
+    cursor: not-allowed;
+
+    background: #f8fafc;
+    color: #94a3b8;
+
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   RESUME CURRENT FILE
+========================================================= */
+
+.current-resume {
+    width: 100%;
+
+    min-height: 70px;
+
+    margin-bottom: 18px;
+    padding: 13px 15px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    border: 1px solid #dbe4ef;
+    border-radius: 10px;
+
+    background: #f8fafc;
+}
+
+.current-resume > svg {
+    flex-shrink: 0;
+
+    color: #2563eb;
+}
+
+.current-resume > div {
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.current-resume strong {
+    color: #273449;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.current-resume span {
+    color: #7b8798;
+
+    font-size: 12px;
+}
+
+.current-resume a {
+    flex-shrink: 0;
+
+    padding: 8px 12px;
+
+    border: 1px solid #bfdbfe;
+    border-radius: 7px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.current-resume a:hover {
+    border-color: #93c5fd;
+
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+
+/* =========================================================
+   RESUME UPLOAD
+========================================================= */
+
+.resume-upload {
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+.resume-upload > input[type="file"] {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    box-sizing: border-box;
+
+    border: 1px dashed #b9c7d8;
+    border-radius: 10px;
+
+    background: #fafcff;
+
+    color: #475569;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.resume-upload > input[type="file"]:hover:not(:disabled) {
+    border-color: #60a5fa;
+
+    background: #f5f9ff;
+}
+
+.resume-upload > input[type="file"]:focus {
+    outline: none;
+
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.08);
+}
+
+.resume-upload > input[type="file"]:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   SELECTED RESUME
+========================================================= */
+
+.selected-resume {
+    width: 100%;
+
+    margin-top: 12px;
+    padding: 12px 13px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    border: 1px solid #bfdbfe;
+    border-radius: 9px;
+
+    background: #eff6ff;
+}
+
+.selected-resume > svg {
+    flex-shrink: 0;
+
+    color: #2563eb;
+}
+
+.selected-resume span {
+    min-width: 0;
+
+    flex: 1;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    color: #334155;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.selected-resume button {
+    width: 30px;
+    height: 30px;
+
+    flex: 0 0 30px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 7px;
+
+    background: transparent;
+    color: #64748b;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.selected-resume button:hover:not(:disabled) {
+    background: #dbeafe;
+    color: #dc2626;
+}
+
+.selected-resume button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   SMALL HELPER TEXT
+========================================================= */
+
+.profile-section small {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #8995a6;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PROFESSIONAL INFORMATION
+========================================================= */
+
+.profile-professional {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+.profile-professional > div:last-child {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   SAVE ACTIONS
+========================================================= */
+
+.profile-actions {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    margin-top: 24px;
+}
+
+.profile-actions button {
+    min-width: 150px;
+    min-height: 44px;
+
+    padding: 11px 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border: 1px solid #2563eb;
+    border-radius: 9px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 10px rgba(37, 99, 235, 0.14);
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.profile-actions button:hover:not(:disabled) {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+
+    box-shadow:
+        0 6px 16px rgba(37, 99, 235, 0.2);
+
+    transform: translateY(-1px);
+}
+
+.profile-actions button:active:not(:disabled) {
+    transform: translateY(0);
+
+    box-shadow:
+        0 3px 8px rgba(37, 99, 235, 0.15);
+}
+
+.profile-actions button:disabled {
+    cursor: not-allowed;
+
+    background: #93c5fd;
+    border-color: #93c5fd;
+
+    box-shadow: none;
+
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   LOADING SPINNER
+========================================================= */
+
+.spin {
+    animation: profile-spin 0.9s linear infinite;
+}
+
+@keyframes profile-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   GLOBAL BOX SIZING FOR PAGE
+========================================================= */
+
+.candidate-profile *,
+.candidate-profile *::before,
+.candidate-profile *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .candidate-profile {
+        padding: 28px 24px 50px;
+    }
+
+    .profile-section {
+        padding: 24px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .candidate-profile {
+        padding: 24px 18px 45px;
+    }
+
+
+    .candidate-profile-header {
+        margin-bottom: 22px;
+    }
+
+
+    .candidate-profile-header h1 {
+        font-size: 26px;
+    }
+
+
+    .profile-section {
+        padding: 21px 20px;
+
+        border-radius: 12px;
+    }
+
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+
+        gap: 17px;
+    }
+
+
+    .profile-professional {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .profile-professional > div:last-child {
+        grid-column: auto;
+    }
+
+
+    .profile-photo-area {
+        align-items: flex-start;
+    }
+
+
+    .current-resume {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+
+    .current-resume > div {
+        min-width: calc(100% - 55px);
+    }
+
+
+    .current-resume a {
+        margin-left: 35px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 560px) {
+
+    .candidate-profile {
+        padding: 18px 13px 36px;
+    }
+
+
+    .candidate-profile-header {
+        margin-bottom: 18px;
+    }
+
+
+    .candidate-profile-header h1 {
+        font-size: 23px;
+    }
+
+
+    .candidate-profile-header p {
+        margin-top: 5px;
+
+        font-size: 13px;
+    }
+
+
+    .profile-success,
+    .profile-error {
+        margin-bottom: 16px;
+
+        padding: 11px 13px;
+
+        font-size: 13px;
+    }
+
+
+    .profile-section {
+        margin-bottom: 16px;
+        padding: 18px 16px;
+
+        border-radius: 11px;
+    }
+
+
+    .profile-section h2 {
+        margin-bottom: 17px;
+
+        font-size: 16px;
+    }
+
+
+    .section-title-row {
+        margin-bottom: 17px;
+    }
+
+
+    .section-title-row > svg {
+        width: 20px;
+        height: 20px;
+    }
+
+
+    /* -----------------------------------------
+       PHOTO
+    ----------------------------------------- */
+
+    .profile-photo-area {
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+
+        gap: 14px;
+    }
+
+
+    .profile-avatar {
+        width: 88px;
+        height: 88px;
+
+        flex-basis: 88px;
+    }
+
+
+    .profile-photo-area > div:nth-child(2) {
+        width: 100%;
+    }
+
+
+    .profile-photo-area button {
+        width: 100%;
+    }
+
+
+    .selected-file {
+        width: 100%;
+
+        max-width: none;
+
+        text-align: left;
+    }
+
+
+    /* -----------------------------------------
+       INPUTS
+    ----------------------------------------- */
+
+    .profile-grid {
+        gap: 15px;
+    }
+
+
+    .profile-grid label,
+    .profile-professional label {
+        margin-bottom: 7px;
+
+        font-size: 12px;
+    }
+
+
+    .profile-grid input {
+        height: 43px;
+
+        padding: 0 12px;
+
+        font-size: 13px;
+    }
+
+
+    .profile-professional textarea {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------
+       RESUME
+    ----------------------------------------- */
+
+    .current-resume {
+        padding: 12px;
+    }
+
+
+    .current-resume > div {
+        min-width: 0;
+
+        flex: 1;
+    }
+
+
+    .current-resume a {
+        width: calc(100% - 35px);
+
+        margin-left: 35px;
+
+        text-align: center;
+    }
+
+
+    .resume-upload > input[type="file"] {
+        padding: 10px;
+
+        font-size: 12px;
+    }
+
+
+    .selected-resume {
+        padding: 10px;
+    }
+
+
+    .selected-resume span {
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------------------
+       SAVE BUTTON
+    ----------------------------------------- */
+
+    .profile-actions {
+        margin-top: 18px;
+    }
+
+
+    .profile-actions button {
+        width: 100%;
+
+        min-height: 45px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .candidate-profile {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .profile-section {
+        padding: 16px 13px;
+    }
+
+
+    .candidate-profile-header h1 {
+        font-size: 21px;
+    }
+
+
+    .profile-avatar {
+        width: 82px;
+        height: 82px;
+
+        flex-basis: 82px;
+    }
+
+
+    .profile-section h2 {
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.profile-photo-area button:focus-visible,
+.selected-file button:focus-visible,
+.selected-resume button:focus-visible,
+.profile-actions button:focus-visible,
+.current-resume a:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.22);
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .candidate-profile *,
+    .candidate-profile *::before,
+    .candidate-profile *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+}

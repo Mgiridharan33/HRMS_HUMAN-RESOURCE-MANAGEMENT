@@ -1,0 +1,706 @@
+/* =========================================================
+   APPLY PAGE
+========================================================= */
+
+.candidate-apply {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    padding: 28px 32px 50px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BACK
+========================================================= */
+
+.apply-back {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #4b5563;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    padding: 5px 0;
+}
+
+.apply-back:hover {
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.apply-header {
+    margin-top: 22px;
+
+    margin-bottom: 25px;
+}
+
+.apply-header > span {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+
+    color: #2563eb;
+}
+
+.apply-header h1 {
+    margin: 6px 0 8px;
+
+    font-size: 30px;
+
+    color: #111827;
+}
+
+.apply-header p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.apply-error {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 13px 15px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 10px;
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.application-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        310px;
+
+    gap: 22px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.apply-section {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    margin-bottom: 18px;
+}
+
+.apply-section-title {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.apply-section-title > svg {
+    flex-shrink: 0;
+
+    color: #2563eb;
+
+    margin-top: 2px;
+}
+
+.apply-section-title h2 {
+    margin: 0;
+
+    font-size: 17px;
+
+    color: #111827;
+}
+
+.apply-section-title p {
+    margin: 4px 0 0;
+
+    font-size: 12px;
+
+    color: #9ca3af;
+}
+
+
+/* =========================================================
+   SELECTED JOB
+========================================================= */
+
+.selected-job {
+    padding: 16px;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.selected-job strong {
+    color: #111827;
+
+    font-size: 15px;
+}
+
+.selected-job span {
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.candidate-info-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 17px;
+}
+
+.candidate-info-grid > div,
+.application-form-fields > div {
+    min-width: 0;
+}
+
+.candidate-info-grid label,
+.application-form-fields label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #374151;
+}
+
+.candidate-info-grid input,
+.application-form-fields input,
+.application-form-fields textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    padding: 11px 12px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.candidate-info-grid input {
+    height: 43px;
+}
+
+.application-form-fields textarea {
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+.application-form-fields input:focus,
+.application-form-fields textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            37,
+            99,
+            235,
+            0.08
+        );
+}
+
+.candidate-info-grid input:disabled {
+    background: #f9fafb;
+
+    color: #6b7280;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   RESUME STATUS
+========================================================= */
+
+.resume-status {
+    height: 43px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0 11px;
+
+    border-radius: 8px;
+
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+
+    color: #15803d;
+
+    font-size: 12px;
+}
+
+.resume-status a {
+    margin-left: auto;
+
+    color: #2563eb;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   EDIT PROFILE
+========================================================= */
+
+.edit-profile-link {
+    margin-top: 16px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #2563eb;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    padding: 0;
+}
+
+
+/* =========================================================
+   APPLICATION FIELDS
+========================================================= */
+
+.application-form-fields {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.apply-sidebar {
+    position: sticky;
+
+    top: 20px;
+}
+
+.submit-application-card {
+    padding: 23px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 15px;
+}
+
+.submit-application-card h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 17px;
+}
+
+.submit-application-card p {
+    margin: 9px 0 18px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.submit-application-card button {
+    width: 100%;
+
+    min-height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.submit-application-card button:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.submit-application-card button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.application-note {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    padding: 16px;
+
+    margin-top: 14px;
+
+    border-radius: 12px;
+
+    background: #eff6ff;
+
+    color: #1d4ed8;
+}
+
+.application-note svg {
+    flex-shrink: 0;
+
+    margin-top: 2px;
+}
+
+.application-note p {
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.application-success-page {
+    min-height: 70vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.application-success-card {
+    width: 100%;
+
+    max-width: 520px;
+
+    text-align: center;
+
+    padding: 45px 35px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+}
+
+.success-icon {
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #dcfce7;
+
+    color: #16a34a;
+}
+
+.application-success-card h1 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 25px;
+}
+
+.application-success-card > p {
+    margin: 12px auto 25px;
+
+    max-width: 420px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.success-actions {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.success-actions button {
+    width: 100%;
+
+    height: 44px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+}
+
+.secondary-success-button {
+    background: #f3f4f6 !important;
+
+    color: #374151 !important;
+}
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+.candidate-apply-state {
+    min-height: 60vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #9ca3af;
+}
+
+.candidate-apply-state h3 {
+    margin: 12px 0 5px;
+
+    color: #374151;
+}
+
+.candidate-apply-state p {
+    font-size: 14px;
+}
+
+.candidate-apply-state button {
+    margin-top: 12px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    padding: 10px 16px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SPIN
+========================================================= */
+
+.spin {
+    animation: apply-spin 1s linear infinite;
+}
+
+@keyframes apply-spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .application-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .apply-sidebar {
+        position: static;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .candidate-apply {
+        padding: 20px 16px 40px;
+    }
+
+    .apply-header h1 {
+        font-size: 25px;
+    }
+
+    .candidate-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .apply-section {
+        padding: 19px;
+    }
+
+}

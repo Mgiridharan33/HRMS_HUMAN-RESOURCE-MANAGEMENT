@@ -1,0 +1,260 @@
+/* =========================================================
+   CANDIDATE LAYOUT
+========================================================= */
+
+.candidate-layout {
+    --candidate-sidebar-width: 260px;
+    --candidate-sidebar-collapsed-width: 76px;
+
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+
+    background: #f6f8fc;
+
+    color: #172033;
+}
+
+
+/* =========================================================
+   SIDEBAR CONTAINER
+========================================================= */
+
+.candidate-sidebar-container {
+    width: var(--candidate-sidebar-width);
+
+    min-width: var(--candidate-sidebar-width);
+
+    height: 100vh;
+
+    position: sticky;
+
+    top: 0;
+    left: 0;
+
+    z-index: 100;
+
+    transition:
+        width 0.25s ease,
+        min-width 0.25s ease;
+}
+
+
+.candidate-layout-collapsed
+.candidate-sidebar-container {
+    width: var(--candidate-sidebar-collapsed-width);
+
+    min-width: var(--candidate-sidebar-collapsed-width);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.candidate-layout-main {
+    flex: 1;
+
+    min-width: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   PAGE CONTAINER
+========================================================= */
+
+.candidate-page-container {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   MOBILE HEADER
+========================================================= */
+
+.candidate-mobile-header {
+    display: none;
+
+    height: 64px;
+
+    padding: 0 18px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e7eaf0;
+
+    align-items: center;
+
+    gap: 14px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 90;
+}
+
+
+.candidate-mobile-menu {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid #e4e7ec;
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    color: #344054;
+}
+
+
+.candidate-mobile-menu:hover {
+    background: #f5f7fa;
+}
+
+
+.candidate-mobile-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #172033;
+}
+
+
+.candidate-mobile-brand-icon {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #4f46e5
+    );
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.candidate-mobile-overlay {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    border: 0;
+
+    padding: 0;
+
+    background: rgba(
+        15,
+        23,
+        42,
+        0.42
+    );
+
+    z-index: 150;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .candidate-mobile-header {
+        display: flex;
+    }
+
+
+    .candidate-sidebar-container {
+        position: fixed;
+
+        left: 0;
+        top: 0;
+
+        height: 100vh;
+
+        width: 260px;
+
+        min-width: 260px;
+
+        transform:
+            translateX(-100%);
+
+        transition:
+            transform 0.25s ease;
+
+        z-index: 200;
+    }
+
+
+    .candidate-sidebar-mobile-open {
+        transform:
+            translateX(0);
+    }
+
+
+    .candidate-layout-collapsed
+    .candidate-sidebar-container {
+        width: 260px;
+
+        min-width: 260px;
+    }
+
+
+    .candidate-mobile-overlay {
+        display: block;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .candidate-mobile-header {
+        height: 60px;
+
+        padding:
+            0 14px;
+    }
+
+}
